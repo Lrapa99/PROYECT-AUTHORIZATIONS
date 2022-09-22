@@ -1,0 +1,214 @@
+@use "./partials/config";
+
+//variables
+
+$body-font: "Roboto", sans-serif;
+$main-color: #f8f9f9;
+$letra-black: #212f3d;
+$letra-orange: #dc7633;
+$right-color: #d5dbdb;
+$left-color: #aed6f1;
+
+body {
+  background-color: $main-color;
+  font-family: $body-font;
+  color: $letra-orange;
+}
+
+.padre {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+
+  .all-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #212f3d;
+    margin-top: 15px;
+    color: $letra-orange;
+    height: 870px;
+    width: 90%;
+
+    .left {
+      //background-color: $left-color;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $letra-black;
+
+      .formato__bloque1 {
+        color: $letra-black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $letra-black;
+        height: 120px;
+
+        .bloque1__parte1 {
+          padding-left: 20px;
+        }
+
+        .bloque1__parte3 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 30px 0 30px;
+        }
+      }
+
+      .formato__bloque2 {
+        color: $letra-black;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $letra-black;
+        height: 180px;
+
+        .bloque2__parte1 {
+          padding-left: 20px;
+        }
+        .bloque2__parte2 {
+          align-items: center;
+        }
+
+        .bloque2__parte2,
+        .bloque2__parte1,
+        .bloque2__parte3 {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .bloque2__parte3 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px 0 20px;
+          height: 170px;
+        }
+      }
+
+      .formato__bloque3 {
+        color: $letra-black;
+        display: flex;
+        border-bottom: 1px solid $letra-black;
+
+        .bloque3__parte1 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 40%;
+          padding-left: 20px;
+          height: 200px;
+        }
+        .bloque3__parte2 {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 100%;
+          padding-left: 20px;
+
+          #nombres {
+            width: 90%;
+          }
+
+          #documento {
+            width: 90%;
+          }
+
+          #servicios {
+            width: 98%;
+          }
+        }
+      }
+
+      .formato__bloque4 {
+        .bloque4__parte1 {
+          color: $letra-black;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid $letra-black;
+          padding-left: 20px;
+          width: 100%;
+          height: 50px;
+
+          #copago{
+            width: 20%;
+          }
+          .bloque4__parte1__copago {
+            display: flex;
+            align-items: center;
+            width: 85%;
+            padding-left: 20px;
+          }
+        }
+
+        .bloque4__parte2 {
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          color: $letra-black;
+          border-bottom: 1px solid $letra-black;
+          height: 100px;
+
+          .bloque4__parte2__img-resultado {
+            width: 80%;
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        .bloque4__parte3 {
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          width: 100%;
+          color: $letra-black;
+          border-bottom: 1px solid $letra-black;
+          height: 100px;
+          .bloque4__parte3__firma {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 200px;
+            width: 78%;
+          }
+        }
+
+        .bloque4__parte4 {
+          color: $letra-black;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          height: 85px;
+
+          .bloque4__parte4__quien-autoriza {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 87%;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      width: 50%;
+      color: $letra-black;
+      font-weight: 500;
+      .right__title {
+        font-size: 3em;
+        font-weight: 700;
+        color: $letra-black;
+        span {
+          color: $letra-orange;
+        }
+      }
+    }
+  }
+}

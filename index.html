@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorizacions</title>
+    <link rel="stylesheet" href="./sass/styles.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+   <div class="padre">
+    <div class="all-content shadow-lg p-3 mb-5 bg-body rounded">
+        <div class="left">
+            <div class="formato">
+                <div class="formato__bloque1">
+                    <div class="bloque1__parte1">
+                    <img src="https://www.calidadmedicaips.com/wp-content/uploads/2018/07/logo-clidad.png" alt="MDN" id="logo-cmd">
+                </div>
+                <div class="bloque1__parte2">
+                    <span>CONTRAREFERENCIA DE ESTUDIOS COMPLEMENTARIOS</span>
+                </div>
+                    <div class="bloque1__parte3">
+                        <span>CODIGO GF-FO-002</span>
+                        <span>VERSION: 04</span>
+                        <span>VIGENCIA: MARZO 2022</span>
+                    </div>
+                </div>
+                <div class="formato__bloque2">
+                    <div class="bloque2__parte1">
+                        <span>REMITE A:</span>
+                        <span>DIRECCION:</span>
+                        <span>CORREO ELECTRONICO:</span>
+                        <span>HORARIO DE ATENCION:</span>
+                        <span>APARTAR CITA:</span>
+                        <span>TELEFONO FIJO:</span> 
+                        <span>EPS:</span>     
+                    </div>
+                    <div class="bloque2__parte2">
+                        <span>MAXILODENT</span>
+                        <span>CALLE 15 #14-33 OFICINA PORTAL DEL VALLE</span>
+                        <span>maxilodent@gmail.com</span>
+                        <span>DE 08:00AM A 12:30PM - 02:00OM A 06:00PM</span>
+                        <span>3135249123</span>
+                        <span>5837886</span> 
+                        <span>COOSALUD</span>
+                    </div>
+                    <div class="bloque2__parte3">
+                        <span>FECHA/AÑO</span>
+                        <div class="bloque2__parte3__fecha">
+                            <span>FORMATO DE FECHA</span>
+                        </div>
+                        <div class="bloque2__parte3__autorizacion">
+                            <span># AUTORIZACION: </span>
+                            <span>2000168</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formato__bloque3">
+                    <div class="bloque3__parte1">
+                        <span>NOMBRE DE USUARIO:</span>
+                        <span>N° IDENTIFICACION:</span>
+                        <span>NOMBRE DEL ESTUDIO:</span>
+                    </div>
+                    <div class="bloque3__parte2">
+                        <div class="bloque3__parte2__input_nombre">
+                            <input  type="text" class="form-control" id="nombres" placeholder="Nombres">
+                        </div>
+                        <div class="bloque3__parte2__input__documento">
+                                <input type="text" class="form-control" id="documento" placeholder="Documento">
+                        </div>
+                        <div class="bloque3__parte2__input__estudio">
+                            <input  type="text" class="form-control" list="datalistOptions" id="servicios" placeholder="Servicios">
+                            <datalist id="datalistOptions">
+                                <option value="870114-RADIOGRAFIA PANORAMICA DE MAXILARES, SUPERIOR E INFERIOR (ORTOPANTOMOGRAFIA)">
+                                <option value="870456-RADIOGRAFÍAS INTRAORALES PERIAPICALES JUEGO COMPLETO">
+                                <option value="870456-1-OCLUSAL DIGITALES">
+                                <option value="870456-2-PERIAPICAL PARCIAL DIGITAL">
+                                <option value="879910-TAC VOLUMETRICO 3D/CONE BEAM SECTORIZADO">
+                                <option value="879141-TAC ESTUDIO DE UN  MAXILAR IMPLANTOLOGIA CONE BEAM 3D">
+                            </datalist>
+                    </div>
+                    </div>
+                </div>
+                <div class="formato__bloque4">
+                    <div class="bloque4__parte1">
+                        <span>COPAGO CANCELADO:</span>
+                        <div class="bloque4__parte1__copago">
+                            <input type="text" class="form-control" id="copago" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="bloque4__parte2">
+                        <span>ENTREGA DE RESULTADOS:</span>
+                        <div class="bloque4__parte2__img-resultado">
+                            <img src="./img/maxilodent.png" height="70" alt="">
+                        </div>
+                    </div>
+                    <div class="bloque4__parte3">
+                        <span>V.º B.º</span>
+                        <div class="bloque4__parte3__firma">
+                                <img src="./img/firma.png" height="40" alt="">
+                                <img src="./img/firmaLogo.png" height="40" alt="">
+                        </div>
+                    </div>
+                    <div class="bloque4__parte4">
+                        <span>AUTORIZADO POR:</span>
+                        <div class="bloque4__parte4__quien-autoriza">
+                            <span>EDWIN GONZALEZ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="formato__bloque5"></div>
+                <div class="formato__bloque6"></div>
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="right__title"><span>Auto</span>rizaciones</div>
+            <div class="right__options">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Radiologia Imagenes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Maxilodent
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                      Castulo Ropain
+                    </label>
+                  </div>
+            </div>
+            <div class="right__btns">
+                <button type="button" class="btn btn-primary">Imprimir</button>
+                <button type="button" class="btn btn-success">Generar PDF</button>
+                <button type="button" class="btn btn-danger">Limpiar</button>
+            </div>
+        </div>
+    </div>
+   </div>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
