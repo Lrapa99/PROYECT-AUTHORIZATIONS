@@ -8,6 +8,10 @@ $letra-black: #212f3d;
 $letra-orange: #dc7633;
 $right-color: #d5dbdb;
 $left-color: #aed6f1;
+$color-maxilodent: #1a939e;
+$color-radiologia: #e67e22;
+$color-castulo: #16a085;
+$color-coosalud: #75b948;
 
 body {
   background-color: $main-color;
@@ -49,11 +53,20 @@ body {
           padding-left: 20px;
         }
 
+        .bloque1__parte2 {
+          span {
+            font-weight: 700;
+          }
+        }
+
         .bloque1__parte3 {
           display: flex;
           flex-direction: column;
           align-items: center;
           padding: 0 30px 0 30px;
+          span {
+            font-weight: 500;
+          }
         }
       }
 
@@ -66,9 +79,24 @@ body {
 
         .bloque2__parte1 {
           padding-left: 20px;
+          span {
+            font-weight: 500;
+          }
         }
         .bloque2__parte2 {
           align-items: center;
+          #title__remitente {
+            font-size: 20px;
+            color: $color-maxilodent;
+            font-weight: 700;
+          }
+          #title__coosalud {
+            color: $color-coosalud;
+          }
+
+          span {
+            font-weight: 500;
+          }
         }
 
         .bloque2__parte2,
@@ -85,6 +113,9 @@ body {
           align-items: center;
           padding: 0 20px 0 20px;
           height: 170px;
+          span {
+            font-weight: 500;
+          }
         }
       }
 
@@ -92,12 +123,15 @@ body {
         color: $letra-black;
         display: flex;
         border-bottom: 1px solid $letra-black;
+        span {
+          font-weight: 500;
+        }
 
         .bloque3__parte1 {
           display: flex;
           flex-direction: column;
           justify-content: space-around;
-          width: 40%;
+          width: 21%;
           padding-left: 20px;
           height: 200px;
         }
@@ -123,6 +157,9 @@ body {
       }
 
       .formato__bloque4 {
+        span {
+          font-weight: 500;
+        }
         .bloque4__parte1 {
           color: $letra-black;
           display: flex;
@@ -133,7 +170,7 @@ body {
           width: 100%;
           height: 50px;
 
-          #copago{
+          #copago {
             width: 20%;
           }
           .bloque4__parte1__copago {
@@ -171,7 +208,7 @@ body {
             display: flex;
             justify-content: space-between;
             margin-left: 200px;
-            width: 78%;
+            width: 75%;
           }
         }
 
