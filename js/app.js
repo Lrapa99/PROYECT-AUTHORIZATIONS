@@ -13,7 +13,7 @@ const formato = $("#all-formato");
 const ilustracion = $("#img__ilustracion");
 
 
-console.log(ilustracion);
+console.log(radiologia[0]);
 
 //console.log(btnPrint[0]);
 
@@ -43,6 +43,7 @@ radiologia[0].addEventListener("click", () => {
     whatsapp[0].innerHTML = " 3205684881";
     fijo[0].innerHTML = " 5715071 - 5807908";
     ilustracion[0].src = './img/undraw_job_hunt_re_q203.svg'
+    //ilustracion[0].classList.add('animate__animated animate__fadeIn')
 
   }
 });
