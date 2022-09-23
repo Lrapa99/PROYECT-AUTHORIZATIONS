@@ -30,18 +30,24 @@ body {
 .padre .all-content .left {
   width: 100%;
   height: 100%;
-  border: 1px solid #212f3d;
+  border: 2px solid #212f3d;
 }
 .padre .all-content .left .formato__bloque1 {
   color: #212f3d;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #212f3d;
   height: 120px;
 }
 .padre .all-content .left .formato__bloque1 .bloque1__parte1 {
   padding-left: 20px;
+}
+.padre .all-content .left .formato__bloque1 .bloque1__parte2 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 300px;
 }
 .padre .all-content .left .formato__bloque1 .bloque1__parte2 span {
   font-weight: 700;
@@ -59,7 +65,6 @@ body {
   color: #212f3d;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #212f3d;
   height: 180px;
 }
 .padre .all-content .left .formato__bloque2 #remiteA {
@@ -115,7 +120,6 @@ body {
 .padre .all-content .left .formato__bloque3 {
   color: #212f3d;
   display: flex;
-  border-bottom: 1px solid #212f3d;
 }
 .padre .all-content .left .formato__bloque3 span {
   font-weight: 500;
@@ -152,7 +156,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #212f3d;
   padding-left: 20px;
   width: 100%;
   height: 50px;
@@ -171,7 +174,6 @@ body {
   align-items: center;
   padding-left: 20px;
   color: #212f3d;
-  border-bottom: 1px solid #212f3d;
   height: 100px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado {
@@ -185,7 +187,6 @@ body {
   padding-left: 20px;
   width: 100%;
   color: #212f3d;
-  border-bottom: 1px solid #212f3d;
   height: 100px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {
@@ -207,6 +208,9 @@ body {
   align-items: center;
   width: 87%;
 }
+.padre .all-content .right__print {
+  display: none;
+}
 .padre .all-content .right {
   display: flex;
   flex-direction: column;
@@ -217,11 +221,14 @@ body {
   color: #212f3d;
   font-weight: 500;
 }
+.padre .all-content .right input:checked {
+  background-color: #f9a826;
+}
 .padre .all-content .right .right__title {
   font-size: 3em;
   font-weight: 700;
   color: #212f3d;
 }
 .padre .all-content .right .right__title span {
-  color: #dc7633;
+  color: #f9a826;
 }/*# sourceMappingURL=styles.css.map */
