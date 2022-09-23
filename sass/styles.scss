@@ -76,18 +76,34 @@ body {
         justify-content: space-between;
         border-bottom: 1px solid $letra-black;
         height: 180px;
+        #remiteA {
+          padding-bottom: 6px;
+        }
 
         .bloque2__parte1 {
           padding-left: 20px;
+
           span {
             font-weight: 500;
           }
         }
         .bloque2__parte2 {
           align-items: center;
-          #title__remitente {
+          .maxilodent {
             font-size: 20px;
             color: $color-maxilodent;
+            font-weight: 700;
+          }
+
+          .radiologia {
+            font-size: 20px;
+            color: $color-radiologia;
+            font-weight: 700;
+          }
+
+          .castulo {
+            font-size: 20px;
+            color: $color-castulo;
             font-weight: 700;
           }
           #title__coosalud {
@@ -176,7 +192,7 @@ body {
           .bloque4__parte1__copago {
             display: flex;
             align-items: center;
-            width: 85%;
+            width: 83%;
             padding-left: 20px;
           }
         }
