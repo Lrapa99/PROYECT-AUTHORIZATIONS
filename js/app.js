@@ -1,68 +1,107 @@
-const remitente = $("#title__remitente");
-const radiologia = $("#flexRadioDefault1");
-const maxilodent = $("#flexRadioDefault2");
-const castulo = $("#flexRadioDefault3");
+//*asignacion de constantes
+
+//checks radios, opciones para cambiar de remitentes
+const checkRadiologia = $("#flexRadioDefault1");
+const checkMaxilodent = $("#flexRadioDefault2");
+const checkCastulo = $("#flexRadioDefault3");
+
+//remitentes
+const titleRemitente = $("#title__remitente");
 const imgResultados = $("#img__resultados");
+
+//datos empresa
 const direccion = $("#direccion");
 const correo = $("#correo");
 const horario = $("#horario");
 const whatsapp = $("#whatsapp");
 const fijo = $("#tel__fijo");
-const btnPrint = $("#btn__print");
 const formato = $("#all-formato");
 const ilustracion = $("#img__ilustracion");
 
+//botones
+const btnPrint = $("#btn__print");
+const btnClear = $("#btn__clear");
 
-//console.log(radiologia[0]);
+//inputs
+const inputNombres = $("#nombres")[0];
+const inputDocumento = $("#documento")[0];
+const inputServicios1 = $("#servicios1")[0];
+const inputServicios2 = $("#servicios2")[0];
+const inputCopago = $("#copago")[0];
 
-//console.log(btnPrint[0]);
+btnPrint.click(() => {
+  console.log("imprimir");
+});
 
-//console.log(formato[0].innerHTML);
+//objecto con los campos a limpiar
+const valuesClear = {
+  1: inputNombres,
+  2: inputDocumento,
+  3: inputServicios1,
+  4: inputServicios2,
+  5: inputCopago,
+};
 
+//funcion para limpiar solo los campos servicios
+const clearServicies = (obj) => {
+  for (const valor in obj) {
+    if (valor == 3 || valor == 4 || valor == 5) {
+      obj[valor].value = "";
+    }
+  }
+};
 
-btnPrint[0].addEventListener("click",()=>{
-    console.log('imprimir');
+//funcion para limpiar todos los campos
+const clearAll = (obj) => {
+  for (const valor in obj) {
+    //console.log(obj[valor]);
+    obj[valor].value = "";
+  }
+};
 
-})
+//al hacer click en el boton limpiar
+btnClear.click(() => {
+  //console.log("limpiar");
+  clearAll(valuesClear); //invocamos la funcion para limpiar
+});
 
-
-
-radiologia[0].addEventListener("click", () => {
-  if (radiologia[0].checked) {
+checkRadiologia.click(() => {
+  if (checkRadiologia[0].checked) {
     //console.log("radiologia");
-    remitente[0].innerHTML = "RADIOLOGIA E IMAGENES";
-    remitente[0].className = "radiologia";
+    titleRemitente[0].innerHTML = "RADIOLOGIA E IMAGENES";
+    titleRemitente[0].className = "radiologia";
     imgResultados[0].src = "./img/radiologia.png";
     direccion[0].innerHTML = " Carrera 15 # 16-96";
     correo[0].innerHTML = " info@radiologiaeimagenes.co";
     horario[0].innerHTML = "07:00AM A 06:00PM (JORNADA CONTINUA)";
     whatsapp[0].innerHTML = " 3205684881";
     fijo[0].innerHTML = " 5715071 - 5807908";
-    ilustracion[0].src = './img/undraw_job_hunt_re_q203.svg'
-
+    ilustracion[0].src = "./img/undraw_job_hunt_re_q203.svg";
+    clearServicies(valuesClear);
   }
 });
 
-maxilodent[0].addEventListener("click", () => {
-  if (maxilodent[0].checked) {
+checkMaxilodent.click(() => {
+  if (checkMaxilodent[0].checked) {
     //console.log("maxilodent");
-    remitente[0].innerHTML = "MAXILODENT";
-    remitente[0].className = "maxilodent";
+    titleRemitente[0].innerHTML = "MAXILODENT";
+    titleRemitente[0].className = "maxilodent";
     imgResultados[0].src = "./img/maxilodent.png";
     direccion[0].innerHTML = " CALLE 15 #14-33 OFICINA PORTAL DEL VALLE";
     correo[0].innerHTML = " maxilodent@gmail.com";
     horario[0].innerHTML = "08:00AM A 12:30PM - 02:00PM A 06:00PM";
     whatsapp[0].innerHTML = " 3135249123";
     fijo[0].innerHTML = " 5837886";
-    ilustracion[0].src = './img/undraw_completed_tasks_vs6q.svg'
+    ilustracion[0].src = "./img/undraw_completed_tasks_vs6q.svg";
+    clearServicies(valuesClear);
   }
 });
 
-castulo[0].addEventListener("click", () => {
-  if (castulo[0].checked) {
+checkCastulo.click(() => {
+  if (checkCastulo[0].checked) {
     //console.log("castulo");
-    remitente[0].innerHTML = "CASTULO ROPAIN";
-    remitente[0].className = "castulo";
+    titleRemitente[0].innerHTML = "CASTULO ROPAIN";
+    titleRemitente[0].className = "castulo";
     imgResultados[0].src = "./img/castulo.jpg";
     direccion[0].innerHTML = " CALLE 16 # 15-51 CONSULTORIO 101";
     correo[0].innerHTML = " castuloropainloborx@hotmail.com";
@@ -70,15 +109,15 @@ castulo[0].addEventListener("click", () => {
       "07:00AM A 06:00PM (LUNES A VIERNES) 08:00AM A 12:00PM (SABADOS)";
     whatsapp[0].innerHTML = " 3174392224";
     fijo[0].innerHTML = " 5711869";
-    ilustracion[0].src = './img/undraw_collaboration_re_vyau.svg'
-
+    ilustracion[0].src = "./img/undraw_collaboration_re_vyau.svg";
+    clearServicies(valuesClear);
   }
 });
 
-// hora automatica
-showTime();
-function showTime() {
+//funcion para obtener la fecha y hora actual
+const showDate = () => {
   myDate = new Date();
+  fecha = myDate.toLocaleDateString();
   hours = myDate.getHours();
   minutes = myDate.getMinutes();
   seconds = myDate.getSeconds();
@@ -88,6 +127,7 @@ function showTime() {
 
   if (seconds < 10) seconds = "0" + seconds;
 
-  $("#HoraActual").text(hours + ":" + minutes + ":" + seconds);
-  setTimeout("showTime()", 1000);
-}
+  $("#fechaActual").text(`${fecha} ${hours}:${minutes}:${seconds}`);
+  setTimeout("showDate()", 1000);
+};
+showDate();

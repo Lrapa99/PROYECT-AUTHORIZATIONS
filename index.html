@@ -57,10 +57,7 @@
                     <div class="bloque2__parte3">
                         <div class="icon__date"><i class="fa-solid fa-calendar-days"></i><span> FECHA/AÑO</span></div>
                         <div class="bloque2__parte3__fecha">
-                            <span><script>
-                                date = new Date().toLocaleDateString();
-                                document.write(date + " ");
-                                </script></span><span id="HoraActual"></span>
+                            <span id="fechaActual"></span>
                                 </div>
                         <div class="bloque2__parte3__autorizacion">
                             <i class="fa-solid fa-circle-check"></i><span> AUTORIZACION: </span>
@@ -82,7 +79,8 @@
                                 <input type="text" class="form-control" id="documento" placeholder="Documento">
                         </div>
                         <div class="bloque3__parte2__input__estudio">
-                            <input  type="text" class="form-control" list="datalistOptions" id="servicios" placeholder="Servicios">
+                            <input  type="text" class="form-control" list="datalistOptions" id="servicios1" placeholder="Servicios">
+                            <input  type="text" class="form-control" list="datalistOptions" id="servicios2" placeholder="Servicios">
                             <datalist id="datalistOptions">
                                 <option value="870114-RADIOGRAFIA PANORAMICA DE MAXILARES, SUPERIOR E INFERIOR (ORTOPANTOMOGRAFIA)">
                                 <option value="870456-RADIOGRAFÍAS INTRAORALES PERIAPICALES JUEGO COMPLETO">
@@ -108,7 +106,7 @@
                         </div>
                     </div>
                     <div class="bloque4__parte3">
-                        <span>V.º B.º</span>
+                        <div class="d"><span>V.º B.º</span></div>
                         <div class="bloque4__parte3__firma">
                                 <img src="./img/firma.png" height="40" alt="">
                                 <img src="./img/firmaLogo.png" height="40" alt="">
