@@ -14,7 +14,6 @@ $color-castulo: #16a085;
 $color-coosalud: #75b948;
 $color-ilustracion: #f9a826;
 
-
 body {
   background-color: $main-color;
   font-family: $body-font;
@@ -43,8 +42,7 @@ body {
       height: 100%;
       border: 2px solid $letra-black;
 
-
-        .formato__bloque1{
+      .formato__bloque1 {
         color: $letra-black;
         display: flex;
         justify-content: space-between;
@@ -255,8 +253,7 @@ body {
       }
     }
 
-
-    .right__print{
+    .right__print {
       display: none;
     }
 
@@ -269,7 +266,7 @@ body {
       width: 50%;
       color: $letra-black;
       font-weight: 500;
-      input:checked{
+      input:checked {
         background-color: $color-ilustracion;
       }
 
@@ -283,4 +280,147 @@ body {
       }
     }
   }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .all-content {
+    flex-direction: column;
+
+    .left {
+      .formato {
+        font-size: 10px;
+
+        .formato__bloque1 {
+          .bloque1__parte1 {
+            img {
+              width: 100px;
+            }
+          }
+
+          .bloque1__parte3 {
+            text-align: center;
+          }
+        }
+
+        .formato__bloque2 {
+          .bloque2__parte1 {
+            width: 150px;
+            height: 80%;
+          }
+
+          .bloque2__parte2 {
+            width: 260px;
+            height: 80%;
+            justify-content: space-between;
+            text-align: center;
+            .maxilodent {
+              font-weight: 500;
+              font-size: 13px;
+            }
+            .radiologia {
+              font-weight: 500;
+              font-size: 13px;
+            }
+            .castulo {
+              font-weight: 500;
+              font-size: 13px;
+            }
+          }
+
+          .bloque2__parte3 {
+            height: 80%;
+            text-align: center;
+          }
+        }
+
+        .formato__bloque3 {
+          .bloque3__parte1 {
+            width: 100px;
+          }
+
+          .bloque3__parte2 {
+            input {
+              font-size: 10px;
+            }
+            padding-left: 3px;
+            #nombres {
+              width: 90%;
+            }
+
+            #documento {
+              width: 90%;
+            }
+
+            #servicios {
+              font-size: 7px;
+              width: 100%;
+            }
+          }
+        }
+
+        .formato__bloque4 {
+          .bloque4__parte1 {
+            input {
+              font-size: 10px;
+            }
+          }
+
+          .bloque4__parte2 {
+            .bloque4__parte2__img-resultado {
+              img {
+                width: 50%;
+                height: 90%;
+              }
+            }
+          }
+
+          .bloque4__parte3 {
+            .bloque4__parte3__firma {
+              margin-left: 30px;
+
+              img {
+                width: 40%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      font-size: 15px;
+      margin-top: 30px;
+      .ilustracion {
+        display: none;
+      }
+      .right__options {
+        padding: 20px 0 20px 0;
+      }
+
+      .right__btns {
+        display: flex;
+        flex-direction: column;
+        button {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

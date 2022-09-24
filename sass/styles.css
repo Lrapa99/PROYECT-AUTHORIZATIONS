@@ -231,4 +231,99 @@ body {
 }
 .padre .all-content .right .right__title span {
   color: #f9a826;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .all-content {
+    flex-direction: column;
+  }
+  .all-content .left .formato {
+    font-size: 10px;
+  }
+  .all-content .left .formato .formato__bloque1 .bloque1__parte1 img {
+    width: 100px;
+  }
+  .all-content .left .formato .formato__bloque1 .bloque1__parte3 {
+    text-align: center;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte1 {
+    width: 150px;
+    height: 80%;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte2 {
+    width: 260px;
+    height: 80%;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte2 .maxilodent {
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte2 .radiologia {
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte2 .castulo {
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte3 {
+    height: 80%;
+    text-align: center;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte1 {
+    width: 100px;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 {
+    padding-left: 3px;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 input {
+    font-size: 10px;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #nombres {
+    width: 90%;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #documento {
+    width: 90%;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #servicios {
+    font-size: 7px;
+    width: 100%;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
+    font-size: 10px;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
+    width: 50%;
+    height: 90%;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {
+    margin-left: 30px;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma img {
+    width: 40%;
+  }
+  .all-content .right {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  .all-content .right .ilustracion {
+    display: none;
+  }
+  .all-content .right .right__options {
+    padding: 20px 0 20px 0;
+  }
+  .all-content .right .right__btns {
+    display: flex;
+    flex-direction: column;
+  }
+  .all-content .right .right__btns button {
+    margin-bottom: 10px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) *//*# sourceMappingURL=styles.css.map */

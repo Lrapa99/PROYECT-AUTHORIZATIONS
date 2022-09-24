@@ -13,7 +13,7 @@ const formato = $("#all-formato");
 const ilustracion = $("#img__ilustracion");
 
 
-console.log(radiologia[0]);
+//console.log(radiologia[0]);
 
 //console.log(btnPrint[0]);
 
