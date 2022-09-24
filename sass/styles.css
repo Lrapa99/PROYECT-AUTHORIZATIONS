@@ -607,4 +607,7 @@ body {
     display: flex;
     flex-direction: column;
   }
+  .all-content .right .right__btns button {
+    margin-bottom: 10px;
+  }
 }/*# sourceMappingURL=styles.css.map */
