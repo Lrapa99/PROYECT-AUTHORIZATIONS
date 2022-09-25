@@ -1,0 +1,113 @@
+@media print {
+
+  @page { margin: 0;
+    size: auto; }
+
+    
+  .all-content {
+    flex-direction: column;
+
+    .left {
+      .formato {
+        font-size: 12px;
+
+        .formato__bloque1 {
+          .bloque1__parte1 {
+            img {
+              width: 150px;
+            }
+          }
+
+          .bloque1__parte2 {
+            padding-left: 20px;
+          }
+
+          .bloque1__parte3 {
+            text-align: center;
+          }
+        }
+
+        .formato__bloque2 {
+          .bloque2__parte1 {
+            width: 180px;
+            height: 80%;
+            justify-content: space-between;
+          }
+
+          .bloque2__parte2 {
+            width: 260px;
+            height: 80%;
+            justify-content: space-between;
+            text-align: center;
+
+            #title__remitente {
+              font-size: 13px;
+            }
+          }
+
+          .bloque2__parte3 {
+            height: 80%;
+            text-align: center;
+          }
+        }
+
+        .formato__bloque3 {
+          .bloque3__parte1 {
+            width: 150px;
+            padding-bottom: 20px;
+          }
+
+          .bloque3__parte2 {
+            input {
+              font-size: 10px;
+            }
+            padding-left: 3px;
+            #nombres {
+              font-size: 12px;
+              width: 90%;
+            }
+
+            #documento {
+              font-size: 12px;
+              width: 90%;
+            }
+
+            #servicios {
+              font-size: 9px;
+              width: 100%;
+            }
+          }
+        }
+
+        .formato__bloque4 {
+          .bloque4__parte1 {
+            input {
+              font-size: 12px;
+            }
+          }
+
+          .bloque4__parte2 {
+            .bloque4__parte2__img-resultado {
+              margin-right: 100px;
+              img {
+                width: 150px;
+
+                height: 90%;
+              }
+            }
+          }
+
+          .bloque4__parte3 {
+            .bloque4__parte3__firma {
+              margin-left: 50px;
+
+              #firma {
+                width: 25%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+  }
+  .all-content {
+    flex-direction: column;
+  }
+  .all-content .left .formato {
+    font-size: 12px;
+  }
+  .all-content .left .formato .formato__bloque1 .bloque1__parte1 img {
+    width: 150px;
+  }
+  .all-content .left .formato .formato__bloque1 .bloque1__parte2 {
+    padding-left: 20px;
+  }
+  .all-content .left .formato .formato__bloque1 .bloque1__parte3 {
+    text-align: center;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte1 {
+    width: 180px;
+    height: 80%;
+    justify-content: space-between;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte2 {
+    width: 260px;
+    height: 80%;
+    justify-content: space-between;
+    text-align: center;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte2 #title__remitente {
+    font-size: 13px;
+  }
+  .all-content .left .formato .formato__bloque2 .bloque2__parte3 {
+    height: 80%;
+    text-align: center;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte1 {
+    width: 150px;
+    padding-bottom: 20px;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 {
+    padding-left: 3px;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 input {
+    font-size: 10px;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #nombres {
+    font-size: 12px;
+    width: 90%;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #documento {
+    font-size: 12px;
+    width: 90%;
+  }
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #servicios {
+    font-size: 9px;
+    width: 100%;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
+    font-size: 12px;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado {
+    margin-right: 100px;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
+    width: 150px;
+    height: 90%;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {
+    margin-left: 50px;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma #firma {
+    width: 25%;
+  }
+}/*# sourceMappingURL=styles__print.css.map */

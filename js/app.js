@@ -29,8 +29,18 @@ const inputServicios1 = $("#servicios1")[0];
 const inputServicios2 = $("#servicios2")[0];
 const inputCopago = $("#copago")[0];
 
+
+const right__hidden = $("#right")[0];
+
+
 btnPrint.click(() => {
   console.log("imprimir");
+  right__hidden.className = 'right__print'
+  if (window.print) { 
+    window.print(); 
+  } 
+
+  right__hidden.className = 'right'
 });
 
 //objecto con los campos a limpiar
@@ -78,6 +88,7 @@ checkRadiologia.click(() => {
     fijo[0].innerHTML = " 5715071 - 5807908";
     ilustracion[0].src = "./img/undraw_job_hunt_re_q203.svg";
     clearServicies(valuesClear);
+
   }
 });
 
@@ -131,3 +142,18 @@ const showDate = () => {
   setTimeout("showDate()", 1000);
 };
 showDate();
+
+
+
+$(document).on('keydown', function(e) {
+  if((e.ctrlKey || e.metaKey) && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80) ){
+      alert("Utilice el botón Imprimir para obtener una mejor representación en el documento");
+      e.cancelBubble = true;
+      e.preventDefault();
+
+      e.stopImmediatePropagation();
+  }  
+});
+
+
+
