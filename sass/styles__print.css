@@ -7,7 +7,7 @@
     flex-direction: column;
   }
   .all-content .left .formato {
-    font-size: 12px;
+    font-size: 11px;
   }
   .all-content .left .formato .formato__bloque1 .bloque1__parte1 img {
     width: 150px;
@@ -39,27 +39,28 @@
   .all-content .left .formato .formato__bloque3 .bloque3__parte1 {
     width: 150px;
     padding-bottom: 20px;
+    font-size: 11px;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 {
     padding-left: 3px;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 input {
-    font-size: 10px;
+    font-size: 11px;
+    border: none;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 #nombres {
-    font-size: 12px;
     width: 90%;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 #documento {
-    font-size: 12px;
     width: 90%;
+    margin-top: 14px;
   }
-  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #servicios {
-    font-size: 9px;
-    width: 100%;
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #servicios2 {
+    margin-bottom: 5px;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
     font-size: 12px;
+    border: none;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado {
     margin-right: 100px;

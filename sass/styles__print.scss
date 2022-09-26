@@ -9,7 +9,7 @@
 
     .left {
       .formato {
-        font-size: 12px;
+        font-size: 11px;
 
         .formato__bloque1 {
           .bloque1__parte1 {
@@ -55,26 +55,33 @@
           .bloque3__parte1 {
             width: 150px;
             padding-bottom: 20px;
+            font-size: 11px;
           }
 
           .bloque3__parte2 {
             input {
-              font-size: 10px;
+              font-size: 11px;
+              border: none;
             }
             padding-left: 3px;
             #nombres {
-              font-size: 12px;
+              //font-size: 12px;
               width: 90%;
             }
 
             #documento {
-              font-size: 12px;
+              //font-size: 12px;
               width: 90%;
+              margin-top: 14px;
             }
 
-            #servicios {
-              font-size: 9px;
-              width: 100%;
+            #servicios1{
+              
+            }
+
+            #servicios2{
+            margin-bottom: 5px;
+              
             }
           }
         }
@@ -83,6 +90,7 @@
           .bloque4__parte1 {
             input {
               font-size: 12px;
+              border: none;
             }
           }
 

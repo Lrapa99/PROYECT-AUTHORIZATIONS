@@ -29,18 +29,50 @@ const inputServicios1 = $("#servicios1")[0];
 const inputServicios2 = $("#servicios2")[0];
 const inputCopago = $("#copago")[0];
 
-
+//ocultar parte derecha, para imprimir
 const right__hidden = $("#right")[0];
 
+//asignar nombres a pdf impresos
+const namePrintMaxilodent = "auth__maxilodent";
+const namePrintRadiologia = "auth__radiologia";
+const namePrintCastulo = "auth__castulo";
 
 btnPrint.click(() => {
-  console.log("imprimir");
-  right__hidden.className = 'right__print'
-  if (window.print) { 
-    window.print(); 
-  } 
+  //console.log("imprimir");
 
-  right__hidden.className = 'right'
+  if (window.print) {
+    if (
+      inputNombres.value !== "" &&
+      inputDocumento.value !== "" &&
+      inputServicios1.value !== ""
+    ) {
+      right__hidden.className = "right__print";
+
+      if (checkRadiologia[0].checked) {
+        document.title = namePrintRadiologia;
+      }
+      if (checkMaxilodent[0].checked) {
+        document.title = namePrintMaxilodent;
+      }
+      if (checkCastulo[0].checked) {
+        document.title = namePrintCastulo;
+      }
+
+      if (inputServicios2.value == "") {
+        inputServicios2.placeholder = "";
+      }
+
+      window.print();
+
+      document.title = "Authorizacions";
+      right__hidden.className = "right";
+      inputServicios2.placeholder = "Servicios";
+    } else {
+      alert(
+        "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
+      );
+    }
+  }
 });
 
 //objecto con los campos a limpiar
@@ -72,7 +104,16 @@ const clearAll = (obj) => {
 //al hacer click en el boton limpiar
 btnClear.click(() => {
   //console.log("limpiar");
-  clearAll(valuesClear); //invocamos la funcion para limpiar
+  if (
+    inputNombres.value !== "" ||
+    inputDocumento.value !== "" ||
+    inputServicios1.value !== "" ||
+    inputServicios2.value !== "" ||
+    inputCopago.value !== ""
+  ) {
+    const confirmacion = confirm("Se limpiaran todos los datos");
+    confirmacion ? clearAll(valuesClear) : ""; //invocamos la funcion para limpiar
+  }
 });
 
 checkRadiologia.click(() => {
@@ -88,7 +129,6 @@ checkRadiologia.click(() => {
     fijo[0].innerHTML = " 5715071 - 5807908";
     ilustracion[0].src = "./img/undraw_job_hunt_re_q203.svg";
     clearServicies(valuesClear);
-
   }
 });
 
@@ -143,17 +183,17 @@ const showDate = () => {
 };
 showDate();
 
+$(document).on("keydown", function (e) {
+  if (
+    (e.ctrlKey || e.metaKey) &&
+    (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80)
+  ) {
+    alert(
+      "Utilice el botón Imprimir para obtener una mejor representación en el documento"
+    );
+    e.cancelBubble = true;
+    e.preventDefault();
 
-
-$(document).on('keydown', function(e) {
-  if((e.ctrlKey || e.metaKey) && (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80) ){
-      alert("Utilice el botón Imprimir para obtener una mejor representación en el documento");
-      e.cancelBubble = true;
-      e.preventDefault();
-
-      e.stopImmediatePropagation();
-  }  
+    e.stopImmediatePropagation();
+  }
 });
-
-
-
