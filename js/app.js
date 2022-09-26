@@ -1,3 +1,4 @@
+
 //*asignacion de constantes
 
 //checks radios, opciones para cambiar de remitentes
@@ -32,10 +33,46 @@ const inputCopago = $("#copago")[0];
 //ocultar parte derecha, para imprimir
 const right__hidden = $("#right")[0];
 
-//asignar nombres a pdf impresos
-const namePrintMaxilodent = "auth__maxilodent";
-const namePrintRadiologia = "auth__radiologia";
-const namePrintCastulo = "auth__castulo";
+const getNameDocument = () => {
+  //asignar nombres a pdf impresos
+  const namePrintMaxilodent = `AUTORIZACION_MAXILODENT_`;
+  const namePrintRadiologia = `AUTORIZACION_RADIOLOGIA_`;
+  const namePrintCastulo = `AUTORIZACION_CASTULO_`;
+
+  const fechaDoc = new Date(); //instancia del objeto date
+
+  const objFechaDocument = { //guardamos los valores en un objeto
+    day: fechaDoc.getDate(),
+    month: fechaDoc
+      .toLocaleDateString("es-ES", { month: "long" })
+      .toUpperCase(),
+    year: fechaDoc.getFullYear(),
+  };
+
+  const { day, month, year } = objFechaDocument; //extraemos los datos del objeto
+
+  const result = []; //creamos un array vacio, para almacenar el valor final
+
+  if (checkMaxilodent[0].checked) {
+    result.push(
+      `${namePrintMaxilodent}${inputDocumento.value}_${month}_${day}_${year}`
+    );
+  }
+  if (checkRadiologia[0].checked) {
+    result.push(
+      `${namePrintRadiologia}${inputDocumento.value}_${month}_${day}_${year}`
+    );
+  }
+  if (checkCastulo[0].checked) {
+    result.push(
+      `${namePrintCastulo}${inputDocumento.value}_${month}_${day}_${year}`
+    );
+  }
+
+  return result[0];
+};
+
+//console.log(getNameDocument());
 
 btnPrint.click(() => {
   //console.log("imprimir");
@@ -57,13 +94,14 @@ btnPrint.click(() => {
       }
 
       if (checkRadiologia[0].checked) {
-        document.title = namePrintRadiologia;
+        document.title = getNameDocument();
       }
       if (checkMaxilodent[0].checked) {
-        document.title = namePrintMaxilodent;
+        console.log(inputDocumento.value);
+        document.title = getNameDocument();
       }
       if (checkCastulo[0].checked) {
-        document.title = namePrintCastulo;
+        document.title = getNameDocument();
       }
 
       if (inputServicios2.value == "") {
