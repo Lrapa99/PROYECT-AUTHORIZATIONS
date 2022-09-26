@@ -39,14 +39,22 @@ const namePrintCastulo = "auth__castulo";
 
 btnPrint.click(() => {
   //console.log("imprimir");
-
+  //console.log(new Intl.NumberFormat('es-CO').format(inputCopago.value));
   if (window.print) {
     if (
       inputNombres.value !== "" &&
       inputDocumento.value !== "" &&
       inputServicios1.value !== ""
     ) {
+      //ocultar parte derecha
       right__hidden.className = "right__print";
+
+      //Valor copago, formato de comas por cada 1000
+      if (inputCopago.value !== "") {
+        inputCopago.value = new Intl.NumberFormat("es-CO").format(
+          inputCopago.value
+        );
+      }
 
       if (checkRadiologia[0].checked) {
         document.title = namePrintRadiologia;

@@ -364,6 +364,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #ABB2B9;
   height: 120px;
 }
 .padre .all-content .left .formato__bloque1 .bloque1__parte1 {
@@ -392,6 +393,7 @@ body {
   color: #212f3d;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid #ABB2B9;
   height: 180px;
 }
 .padre .all-content .left .formato__bloque2 #remiteA {
@@ -483,6 +485,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #ABB2B9;
   padding-left: 20px;
   width: 100%;
   height: 50px;
@@ -501,6 +504,7 @@ body {
   align-items: center;
   padding-left: 20px;
   color: #212f3d;
+  border-bottom: 2px solid #ABB2B9;
   height: 100px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado {
@@ -514,6 +518,7 @@ body {
   padding-left: 20px;
   width: 100%;
   color: #212f3d;
+  border-bottom: 2px solid #ABB2B9;
   height: 100px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {

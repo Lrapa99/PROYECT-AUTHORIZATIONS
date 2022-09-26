@@ -1,9 +1,11 @@
 @media print {
 
-  @page { margin: 0;
-    size: auto; }
+  $color-linea: #ABB2B9;
+  @page {
+    margin: 0;
+    size: auto;
+  }
 
-    
   .all-content {
     flex-direction: column;
 
@@ -28,6 +30,7 @@
         }
 
         .formato__bloque2 {
+          align-items: center;
           .bloque2__parte1 {
             width: 180px;
             height: 80%;
@@ -52,6 +55,7 @@
         }
 
         .formato__bloque3 {
+          border-bottom: 2px solid $color-linea;
           .bloque3__parte1 {
             width: 150px;
             padding-bottom: 20px;
@@ -75,13 +79,11 @@
               margin-top: 14px;
             }
 
-            #servicios1{
-              
+            #servicios1 {
             }
 
-            #servicios2{
-            margin-bottom: 5px;
-              
+            #servicios2 {
+              margin-bottom: 7px;
             }
           }
         }
@@ -96,7 +98,7 @@
 
           .bloque4__parte2 {
             .bloque4__parte2__img-resultado {
-              margin-right: 100px;
+              margin-right: 125px;
               img {
                 width: 150px;
 
@@ -112,6 +114,12 @@
               #firma {
                 width: 25%;
               }
+            }
+          }
+
+          .bloque4__parte4 {
+            .bloque4__parte4__quien-autoriza {
+              width: 68%;
             }
           }
         }

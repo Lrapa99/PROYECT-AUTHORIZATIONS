@@ -15,6 +15,7 @@ $color-radiologia: #e67e22;
 $color-castulo: #16a085;
 $color-coosalud: #75b948;
 $color-ilustracion: #f9a826;
+$color-linea: #ABB2B9;
 
 body {
   background-color: $main-color;
@@ -49,7 +50,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        //border-bottom: 1px solid $letra-black;
+        border-bottom: 2px solid $color-linea;
         height: 120px;
         //background-color: #FEF5E7;
 
@@ -84,7 +85,7 @@ body {
         color: $letra-black;
         display: flex;
         justify-content: space-between;
-        //border-bottom: 1px solid $letra-black;
+        border-bottom: 2px solid $color-linea;
         height: 180px;
         #remiteA {
           padding-bottom: 6px;
@@ -148,7 +149,7 @@ body {
       .formato__bloque3 {
         color: $letra-black;
         display: flex;
-        //border-bottom: 1px solid $letra-black;
+        //border-bottom: 2px solid $color-linea;
         span {
           font-weight: 500;
         }
@@ -191,7 +192,7 @@ body {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          //border-bottom: 1px solid $letra-black;
+          border-bottom: 2px solid $color-linea;
           padding-left: 20px;
           width: 100%;
           height: 50px;
@@ -212,7 +213,7 @@ body {
           align-items: center;
           padding-left: 20px;
           color: $letra-black;
-          //border-bottom: 1px solid $letra-black;
+          border-bottom: 2px solid $color-linea;
           height: 100px;
 
           .bloque4__parte2__img-resultado {
@@ -228,7 +229,7 @@ body {
           padding-left: 20px;
           width: 100%;
           color: $letra-black;
-          //border-bottom: 1px solid $letra-black;
+          border-bottom: 2px solid $color-linea;
           height: 100px;
           .bloque4__parte3__firma {
             display: flex;

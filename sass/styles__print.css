@@ -18,6 +18,9 @@
   .all-content .left .formato .formato__bloque1 .bloque1__parte3 {
     text-align: center;
   }
+  .all-content .left .formato .formato__bloque2 {
+    align-items: center;
+  }
   .all-content .left .formato .formato__bloque2 .bloque2__parte1 {
     width: 180px;
     height: 80%;
@@ -35,6 +38,9 @@
   .all-content .left .formato .formato__bloque2 .bloque2__parte3 {
     height: 80%;
     text-align: center;
+  }
+  .all-content .left .formato .formato__bloque3 {
+    border-bottom: 2px solid #ABB2B9;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte1 {
     width: 150px;
@@ -56,14 +62,14 @@
     margin-top: 14px;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 #servicios2 {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
     font-size: 12px;
     border: none;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado {
-    margin-right: 100px;
+    margin-right: 125px;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
     width: 150px;
@@ -74,5 +80,8 @@
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma #firma {
     width: 25%;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte4 .bloque4__parte4__quien-autoriza {
+    width: 68%;
   }
 }/*# sourceMappingURL=styles__print.css.map */
