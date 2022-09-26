@@ -1,3 +1,87 @@
+$(document).ready(() => {
+  //api coosalud
+  let m = [];
+  const baseUrl =
+    "https://apiautogestion.coosalud.com/vAfiliado/GetByTipoDocAndDoc/";
+  const tipDocumentos = {
+    1: "CC",
+    2: "TI",
+    3: "RC",
+    4: "CE",
+    5: "PE",
+    6: "PT",
+    7: "SC",
+  }; //Add Otros TipDoc
+
+  function respuesta(response) {
+    //console.log(response);
+
+    const segundoApellido =
+      response.segundo_apellido == null ? "" : response.segundo_apellido;
+    const segundoNombre =
+      response.segundo_nombre == null ? "" : response.segundo_nombre;
+
+    const primerNombre = response.primer_nombre;
+    const primerApellido = response.primer_apellido;
+    const nameComplet = `${primerNombre} ${segundoNombre} ${primerApellido} ${segundoApellido}`;
+    const estadoUs = response.estado == "AC" ? "ACTIVO" : "INACTIVO";
+
+    $("#nombres")[0].value = nameComplet;
+
+    //console.log(estadoUs);
+
+    const iconActivo =
+      '<img src="./img/activo.png" alt="Estado Activo" title="Estado Activo"">';
+    const iconInactivo =
+      '<img src="./img/inactivo.png" alt="Estado Inactivo" title="Estado Inactivo">';
+    const showIconEstado = estadoUs == "ACTIVO" ? iconActivo : iconInactivo;
+
+    $("#estado")[0].innerHTML = showIconEstado;
+
+    //console.log(nameComplet);
+  }
+
+  function consulta(doc, codtip) {
+    const stt = new Object();
+    stt.url = baseUrl + tipDocumentos[codtip] + "/" + doc;
+    stt.async = true;
+    stt.crossDomain = true;
+    stt.method = "GET";
+
+    $.ajax(stt).done((r) => {
+      if (r.codigo == 100) {
+        if (codtip < 7) consulta(doc, codtip + 1);
+        if (codtip == 7) return alert("No se encontraron datos");
+      } else {
+        let dt = JSON.parse(r.jsonObject);
+        respuesta(dt);
+        //console.log(dt);
+      }
+
+      if (r.codigo == 300) {
+        return alert(
+          "No se pudo realizar la consulta, por favor intenta mas tarde"
+        );
+      }
+    });
+  }
+
+  //consultar documento al presionar enter dentro del input de texto
+  $("#documento").on("keyup", (e) => {
+    let keyCode = e.keyCode || e.which;
+
+    if (keyCode == 13) {
+      const valueInputDoc = $("#documento")[0].value;
+      if (valueInputDoc !== "") {
+        m = $("#documento").val().split(" ");
+
+        for (let doc of m) {
+          consulta(doc, 1);
+        }
+      }
+    }
+  });
+});
 
 //*asignacion de constantes
 
@@ -41,7 +125,8 @@ const getNameDocument = () => {
 
   const fechaDoc = new Date(); //instancia del objeto date
 
-  const objFechaDocument = { //guardamos los valores en un objeto
+  const objFechaDocument = {
+    //guardamos los valores en un objeto
     day: fechaDoc.getDate(),
     month: fechaDoc
       .toLocaleDateString("es-ES", { month: "long" })
@@ -76,8 +161,15 @@ const getNameDocument = () => {
 
 btnPrint.click(() => {
   //console.log("imprimir");
-  //console.log(new Intl.NumberFormat('es-CO').format(inputCopago.value));
   if (window.print) {
+    const iconEstado = $("#estado")[0].lastChild.title;
+
+    //console.log(iconEstado);
+    if (iconEstado !== "Estado Activo") {
+      return alert(
+        'No es posible continuar, el usuario se encuentra en estado "inactivo" en Coosalud'
+      );
+    }
     if (
       inputNombres.value !== "" &&
       inputDocumento.value !== "" &&
@@ -97,7 +189,6 @@ btnPrint.click(() => {
         document.title = getNameDocument();
       }
       if (checkMaxilodent[0].checked) {
-        console.log(inputDocumento.value);
         document.title = getNameDocument();
       }
       if (checkCastulo[0].checked) {
@@ -141,6 +232,7 @@ const clearServicies = (obj) => {
 
 //funcion para limpiar todos los campos
 const clearAll = (obj) => {
+  $("#estado")[0].innerHTML = "";
   for (const valor in obj) {
     //console.log(obj[valor]);
     obj[valor].value = "";
