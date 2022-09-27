@@ -38,7 +38,7 @@ $(document).ready(() => {
 
     $("#estado")[0].innerHTML = showIconEstado;
 
-    //console.log(nameComplet);
+    //console.log(nameComplet);5
   }
 
   function consulta(doc, codtip) {
@@ -51,7 +51,12 @@ $(document).ready(() => {
     $.ajax(stt).done((r) => {
       if (r.codigo == 100) {
         if (codtip < 7) consulta(doc, codtip + 1);
-        if (codtip == 7) return alert("No se encontraron datos");
+        if (codtip == 7) {
+          const showIconNoFound =
+            '<img src="./img/noFound.png" alt="No encontrado" title="No encontrado"">';
+          $("#estado")[0].innerHTML = showIconNoFound;
+          return alert("No se encontraron datos");
+        }
       } else {
         let dt = JSON.parse(r.jsonObject);
         respuesta(dt);
@@ -68,9 +73,11 @@ $(document).ready(() => {
 
   //consultar documento al presionar enter dentro del input de texto
   $("#documento").on("keyup", (e) => {
+    $("#estado")[0].innerHTML = ""; //quitamos icono de estado
     let keyCode = e.keyCode || e.which;
 
     if (keyCode == 13) {
+      $("#nombres")[0].value = "";
       const valueInputDoc = $("#documento")[0].value;
       if (valueInputDoc !== "") {
         m = $("#documento").val().split(" ");
@@ -82,6 +89,8 @@ $(document).ready(() => {
     }
   });
 });
+
+
 
 //*asignacion de constantes
 
@@ -162,52 +171,61 @@ const getNameDocument = () => {
 btnPrint.click(() => {
   //console.log("imprimir");
   if (window.print) {
-    const iconEstado = $("#estado")[0].lastChild.title;
-
-    //console.log(iconEstado);
-    if (iconEstado !== "Estado Activo") {
-      return alert(
-        'No es posible continuar, el usuario se encuentra en estado "inactivo" en Coosalud'
-      );
-    }
-    if (
-      inputNombres.value !== "" &&
-      inputDocumento.value !== "" &&
-      inputServicios1.value !== ""
-    ) {
-      //ocultar parte derecha
-      right__hidden.className = "right__print";
-
-      //Valor copago, formato de comas por cada 1000
-      if (inputCopago.value !== "") {
-        inputCopago.value = new Intl.NumberFormat("es-CO").format(
-          inputCopago.value
+    try {
+      const iconEstado = $("#estado")[0].lastChild.title;
+     
+      if (iconEstado == "Estado Inactivo") {
+        return alert(
+          'No es posible continuar, el usuario se encuentra en estado "Inactivo" en Coosalud'
+        );
+      }
+      if (iconEstado == "No encontrado") {
+        return alert(
+          "No es posible continuar, los datos del usuario no fueron encontrados"
         );
       }
 
-      if (checkRadiologia[0].checked) {
-        document.title = getNameDocument();
-      }
-      if (checkMaxilodent[0].checked) {
-        document.title = getNameDocument();
-      }
-      if (checkCastulo[0].checked) {
-        document.title = getNameDocument();
-      }
+      if (
+        inputNombres.value !== "" &&
+        inputDocumento.value !== "" &&
+        inputServicios1.value !== ""
+      ) {
+        //ocultar parte derecha
+        right__hidden.className = "right__print";
 
-      if (inputServicios2.value == "") {
-        inputServicios2.placeholder = "";
+        //Valor copago, formato de comas por cada 1000
+        if (inputCopago.value !== "") {
+          inputCopago.value = new Intl.NumberFormat("es-CO").format(
+            inputCopago.value
+          );
+        }
+
+        if (checkRadiologia[0].checked) {
+          document.title = getNameDocument();
+        }
+        if (checkMaxilodent[0].checked) {
+          document.title = getNameDocument();
+        }
+        if (checkCastulo[0].checked) {
+          document.title = getNameDocument();
+        }
+
+        if (inputServicios2.value == "") {
+          inputServicios2.placeholder = "";
+        }
+
+        window.print();
+
+        document.title = "Authorizacions";
+        right__hidden.className = "right";
+        inputServicios2.placeholder = "Servicios";
+      } else {
+        alert(
+          "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
+        );
       }
-
-      window.print();
-
-      document.title = "Authorizacions";
-      right__hidden.className = "right";
-      inputServicios2.placeholder = "Servicios";
-    } else {
-      alert(
-        "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
-      );
+    } catch (error) {
+      //console.log(error);
     }
   }
 });
