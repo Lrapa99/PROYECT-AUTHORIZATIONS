@@ -26,7 +26,7 @@ $(document).ready(() => {
     const nameComplet = `${primerNombre} ${segundoNombre} ${primerApellido} ${segundoApellido}`;
     const estadoUs = response.estado == "AC" ? "ACTIVO" : "INACTIVO";
 
-    $("#nombres")[0].value = nameComplet;
+    $("#nombres").val(nameComplet);
 
     //console.log(estadoUs);
 
@@ -36,7 +36,7 @@ $(document).ready(() => {
       '<img src="./img/inactivo.png" alt="Estado Inactivo" title="Estado Inactivo">';
     const showIconEstado = estadoUs == "ACTIVO" ? iconActivo : iconInactivo;
 
-    $("#estado")[0].innerHTML = showIconEstado;
+    $("#estado").html(showIconEstado);
 
     //console.log(nameComplet);5
   }
@@ -49,35 +49,63 @@ $(document).ready(() => {
     stt.method = "GET";
 
     $.ajax(stt).done((r) => {
+      r.codigo = 300;
+
+      console.log(r.codigo);
       if (r.codigo == 100) {
         if (codtip < 7) consulta(doc, codtip + 1);
         if (codtip == 7) {
           const showIconNoFound =
             '<img src="./img/noFound.png" alt="No encontrado" title="No encontrado"">';
-          $("#estado")[0].innerHTML = showIconNoFound;
-          return alert("No se encontraron datos");
+          $("#estado").html(showIconNoFound);
+          //return alert("No se encontraron datos");
+
+          const alertNoFound = `<div class="alert alert-warning" role="alert">
+          No se encontraron datos!</div>`;
+
+          $("#alerts").html(alertNoFound);
+
+          $("#alerts").fadeOut(7000, function () {
+            $(this).html("");
+          });
         }
+      }
+
+      if (r.codigo == 300) {
+        const codigo300 = `<div class="alert alert-danger" role="alert">
+        No se pudo realizar la consulta, por favor intenta mas tarde!</div>`;
+
+        $("#alerts").html(codigo300);
+
+        $("#alerts").fadeOut(7000, function () {
+          $(this).html("");
+
+          $("#estado").html("");
+        });
+        // return alert(
+        //   "No se pudo realizar la consulta, por favor intenta mas tarde"
+        // );
       } else {
         let dt = JSON.parse(r.jsonObject);
         respuesta(dt);
         //console.log(dt);
-      }
-
-      if (r.codigo == 300) {
-        return alert(
-          "No se pudo realizar la consulta, por favor intenta mas tarde"
-        );
       }
     });
   }
 
   //consultar documento al presionar enter dentro del input de texto
   $("#documento").on("keyup", (e) => {
-    $("#estado")[0].innerHTML = ""; //quitamos icono de estado
+    $("#estado").html(""); //quitamos icono de estado
     let keyCode = e.keyCode || e.which;
+    const spinner = `<div class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>`;
 
-    if (keyCode == 13) {
+    if (keyCode == 13 && $("#documento").val() !== "") {
       $("#nombres")[0].value = "";
+      if ($("#nombres")[0].value == "") {
+        $("#estado")[0].innerHTML = spinner;
+      }
       const valueInputDoc = $("#documento")[0].value;
       if (valueInputDoc !== "") {
         m = $("#documento").val().split(" ");
@@ -89,8 +117,6 @@ $(document).ready(() => {
     }
   });
 });
-
-
 
 //*asignacion de constantes
 
@@ -173,7 +199,7 @@ btnPrint.click(() => {
   if (window.print) {
     try {
       const iconEstado = $("#estado")[0].lastChild.title;
-     
+
       if (iconEstado == "Estado Inactivo") {
         return alert(
           'No es posible continuar, el usuario se encuentra en estado "Inactivo" en Coosalud'

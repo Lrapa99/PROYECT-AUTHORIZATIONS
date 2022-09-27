@@ -29,6 +29,10 @@ body {
   justify-items: center;
   align-items: center;
 
+  #alerts{
+    position: absolute;
+
+}
   .all-content {
     display: flex;
     justify-content: space-between;

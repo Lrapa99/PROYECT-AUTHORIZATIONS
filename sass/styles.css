@@ -247,6 +247,10 @@
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1064px) and (max-width: 1600px) {
+  #alerts {
+    position: absolute;
+    width: auto;
+  }
   .all-content {
     flex-direction: row;
   }
@@ -343,6 +347,9 @@ body {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+}
+.padre #alerts {
+  position: absolute;
 }
 .padre .all-content {
   display: flex;
