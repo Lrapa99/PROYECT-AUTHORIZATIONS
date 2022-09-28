@@ -41,52 +41,56 @@ $(document).ready(() => {
     //console.log(nameComplet);5
   }
 
+  // //funcion para mostrar y ocultar alertas
+  // function getAlerts(cod) {
+  //   $("#alerts").fadeIn(100, function () {
+  //     $(this).html(cod);
+  //   });
+
+  //   $("#alerts").fadeOut(7000, function () {
+  //     $(this).html("");
+  //   });
+  // }
+
   function consulta(doc, codtip) {
     const stt = new Object();
-    stt.url = baseUrl + tipDocumentos[codtip] + "/" + doc;
+    stt.url = `${baseUrl}${tipDocumentos[codtip]}/${doc}`;
     stt.async = true;
     stt.crossDomain = true;
     stt.method = "GET";
 
     $.ajax(stt).done((r) => {
-      r.codigo = 300;
-
-      console.log(r.codigo);
+      //console.log(r.codigo);
+      //r.codigo = 300
       if (r.codigo == 100) {
         if (codtip < 7) consulta(doc, codtip + 1);
         if (codtip == 7) {
           const showIconNoFound =
             '<img src="./img/noFound.png" alt="No encontrado" title="No encontrado"">';
+
           $("#estado").html(showIconNoFound);
           //return alert("No se encontraron datos");
 
           const alertNoFound = `<div class="alert alert-warning" role="alert">
           No se encontraron datos!</div>`;
 
-          $("#alerts").html(alertNoFound);
-
-          $("#alerts").fadeOut(7000, function () {
-            $(this).html("");
-          });
+          getAlerts(alertNoFound);
         }
       }
 
       if (r.codigo == 300) {
         const codigo300 = `<div class="alert alert-danger" role="alert">
-        No se pudo realizar la consulta, por favor intenta mas tarde!</div>`;
+        No se pudo realizar la consulta, por favor intente mas tarde!</div>`;
 
-        $("#alerts").html(codigo300);
-
-        $("#alerts").fadeOut(7000, function () {
-          $(this).html("");
-
-          $("#estado").html("");
-        });
+        getAlerts(codigo300);
         // return alert(
         //   "No se pudo realizar la consulta, por favor intenta mas tarde"
         // );
-      } else {
-        let dt = JSON.parse(r.jsonObject);
+      }
+
+      if (r.codigo == 200) {
+        const dt = JSON.parse(r.jsonObject);
+        //console.log(dt);
         respuesta(dt);
         //console.log(dt);
       }
@@ -102,17 +106,12 @@ $(document).ready(() => {
   </div>`;
 
     if (keyCode == 13 && $("#documento").val() !== "") {
-      $("#nombres")[0].value = "";
-      if ($("#nombres")[0].value == "") {
-        $("#estado")[0].innerHTML = spinner;
-      }
-      const valueInputDoc = $("#documento")[0].value;
-      if (valueInputDoc !== "") {
-        m = $("#documento").val().split(" ");
+      $("#nombres").val("");
+      $("#estado").html(spinner);
+      m = $("#documento").val().split(" ");
 
-        for (let doc of m) {
-          consulta(doc, 1);
-        }
+      for (let doc of m) {
+        consulta(doc, 1);
       }
     }
   });
@@ -194,6 +193,17 @@ const getNameDocument = () => {
 
 //console.log(getNameDocument());
 
+//funcion para mostrar y ocultar alertas
+function getAlerts(cod, timeFadeOut = 7000) {
+  $("#alerts").fadeIn(100, function () {
+    $(this).html(cod);
+  });
+
+  $("#alerts").fadeOut(timeFadeOut, function () {
+    $(this).html("");
+  });
+}
+
 btnPrint.click(() => {
   //console.log("imprimir");
   if (window.print) {
@@ -201,14 +211,23 @@ btnPrint.click(() => {
       const iconEstado = $("#estado")[0].lastChild.title;
 
       if (iconEstado == "Estado Inactivo") {
-        return alert(
-          'No es posible continuar, el usuario se encuentra en estado "Inactivo" en Coosalud'
-        );
+        const alertInactivo = `<div class="alert alert-warning" role="alert">
+        No es posible continuar, el usuario se encuentra en estado "Inactivo" en Coosalud!</div>`;
+
+        return getAlerts(alertInactivo);
+
+        // return alert(
+        //   'No es posible continuar, el usuario se encuentra en estado "Inactivo" en Coosalud'
+        // );
       }
       if (iconEstado == "No encontrado") {
-        return alert(
-          "No es posible continuar, los datos del usuario no fueron encontrados"
-        );
+        const alertNoEncontrado = `<div class="alert alert-danger" role="alert">
+        No es posible continuar, los datos del usuario no fueron encontrados!</div>`;
+
+        return getAlerts(alertNoEncontrado);
+        // return alert(
+        //   "No es posible continuar, los datos del usuario no fueron encontrados"
+        // );
       }
 
       if (
@@ -246,9 +265,42 @@ btnPrint.click(() => {
         right__hidden.className = "right";
         inputServicios2.placeholder = "Servicios";
       } else {
-        alert(
-          "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
-        );
+
+        const toast = $('<div>',{
+            'class': 'toast',
+            'role': 'alert',
+            'aria-live': 'assertive',
+            'aria-atomic': 'true'
+        }).append(
+          $('<div>',{
+            'class': 'toast-body',
+            'text': 'Hello, world! This is a toast message.'
+          }).append(
+            $('<div>',{
+              'class': 'mt-2 pt-2 border-top'
+            }).append(
+              $('<button>',{
+                  'type': 'button',
+                  'classs': 'btn btn-primary btn-sm',
+                  'text': 'take action'
+              }).append(
+                $('<button>',{
+                  'type': 'button',
+                  'classs': 'btn btn-secondary btn-sm',
+                  'data-bs-dismiss': 'toast',
+                  'text': 'close'
+              }
+              )
+            )
+          )
+        )
+        ).appendTo('#alerts')
+
+
+        console.log(toast);
+        // alert(
+        //   "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
+        // );
       }
     } catch (error) {
       //console.log(error);
@@ -276,7 +328,7 @@ const clearServicies = (obj) => {
 
 //funcion para limpiar todos los campos
 const clearAll = (obj) => {
-  $("#estado")[0].innerHTML = "";
+  $("#estado").html("");
   for (const valor in obj) {
     //console.log(obj[valor]);
     obj[valor].value = "";
@@ -301,14 +353,14 @@ btnClear.click(() => {
 checkRadiologia.click(() => {
   if (checkRadiologia[0].checked) {
     //console.log("radiologia");
-    titleRemitente[0].innerHTML = "RADIOLOGIA E IMAGENES";
+    titleRemitente.html("RADIOLOGIA E IMAGENES");
     titleRemitente[0].className = "radiologia";
     imgResultados[0].src = "./img/radiologia.png";
-    direccion[0].innerHTML = " Carrera 15 # 16-96";
-    correo[0].innerHTML = " info@radiologiaeimagenes.co";
-    horario[0].innerHTML = "07:00AM A 06:00PM (JORNADA CONTINUA)";
-    whatsapp[0].innerHTML = " 3205684881";
-    fijo[0].innerHTML = " 5715071 - 5807908";
+    direccion.html(" Carrera 15 # 16-96");
+    correo.html(" info@radiologiaeimagenes.co");
+    horario.html("07:00AM A 06:00PM (JORNADA CONTINUA)");
+    whatsapp.html(" 3205684881");
+    fijo.html(" 5715071 - 5807908");
     ilustracion[0].src = "./img/undraw_job_hunt_re_q203.svg";
     clearServicies(valuesClear);
   }
@@ -317,14 +369,14 @@ checkRadiologia.click(() => {
 checkMaxilodent.click(() => {
   if (checkMaxilodent[0].checked) {
     //console.log("maxilodent");
-    titleRemitente[0].innerHTML = "MAXILODENT";
+    titleRemitente.html("MAXILODENT");
     titleRemitente[0].className = "maxilodent";
     imgResultados[0].src = "./img/maxilodent.png";
-    direccion[0].innerHTML = " CALLE 15 #14-33 OFICINA PORTAL DEL VALLE";
-    correo[0].innerHTML = " maxilodent@gmail.com";
-    horario[0].innerHTML = "08:00AM A 12:30PM - 02:00PM A 06:00PM";
-    whatsapp[0].innerHTML = " 3135249123";
-    fijo[0].innerHTML = " 5837886";
+    direccion.html(" CALLE 15 #14-33 OFICINA PORTAL DEL VALLE");
+    correo.html(" maxilodent@gmail.com");
+    horario.html("08:00AM A 12:30PM - 02:00PM A 06:00PM");
+    whatsapp.html(" 3135249123");
+    fijo.html(" 5837886");
     ilustracion[0].src = "./img/undraw_completed_tasks_vs6q.svg";
     clearServicies(valuesClear);
   }
@@ -333,15 +385,16 @@ checkMaxilodent.click(() => {
 checkCastulo.click(() => {
   if (checkCastulo[0].checked) {
     //console.log("castulo");
-    titleRemitente[0].innerHTML = "CASTULO ROPAIN";
+    titleRemitente.html("CASTULO ROPAIN");
     titleRemitente[0].className = "castulo";
     imgResultados[0].src = "./img/castulo.jpg";
-    direccion[0].innerHTML = " CALLE 16 # 15-51 CONSULTORIO 101";
-    correo[0].innerHTML = " castuloropainloborx@hotmail.com";
-    horario[0].innerHTML =
-      "07:00AM A 06:00PM (LUNES A VIERNES) 08:00AM A 12:00PM (SABADOS)";
-    whatsapp[0].innerHTML = " 3174392224";
-    fijo[0].innerHTML = " 5711869";
+    direccion.html(" CALLE 16 # 15-51 CONSULTORIO 101");
+    correo.html(" castuloropainloborx@hotmail.com");
+    horario.html(
+      "07:00AM A 06:00PM (LUNES A VIERNES) 08:00AM A 12:00PM (SABADOS)"
+    );
+    whatsapp.html(" 3174392224");
+    fijo.html(" 5711869");
     ilustracion[0].src = "./img/undraw_collaboration_re_vyau.svg";
     clearServicies(valuesClear);
   }
@@ -370,9 +423,14 @@ $(document).on("keydown", function (e) {
     (e.ctrlKey || e.metaKey) &&
     (e.key == "p" || e.charCode == 16 || e.charCode == 112 || e.keyCode == 80)
   ) {
-    alert(
-      "Utilice el botón Imprimir para obtener una mejor representación en el documento"
-    );
+    const alertNoPrint = `<div class="alert alert-info" role="alert">
+    Utilice el botón Imprimir para obtener una mejor representación en el documento!</div>`;
+
+    getAlerts(alertNoPrint, 9000);
+
+    // alert(
+    //   "Utilice el botón Imprimir para obtener una mejor representación en el documento"
+    // );
     e.cancelBubble = true;
     e.preventDefault();
 
