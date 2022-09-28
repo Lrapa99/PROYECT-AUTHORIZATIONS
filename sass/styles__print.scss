@@ -1,6 +1,12 @@
 @media print {
+  .hiddenPrintBody {
+    visibility: hidden;
+    #right {
+      display: none;
+    }
+  }
 
-  $color-linea: #ABB2B9;
+  $color-linea: #abb2b9;
   @page {
     margin: 0;
     size: auto;
@@ -124,6 +130,10 @@
           }
         }
       }
+    }
+
+    .right__print {
+      display: none;
     }
   }
 }

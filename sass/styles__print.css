@@ -1,4 +1,10 @@
 @media print {
+  .hiddenPrintBody {
+    visibility: hidden;
+  }
+  .hiddenPrintBody #right {
+    display: none;
+  }
   @page {
     margin: 0;
     size: auto;
@@ -40,7 +46,7 @@
     text-align: center;
   }
   .all-content .left .formato .formato__bloque3 {
-    border-bottom: 2px solid #ABB2B9;
+    border-bottom: 2px solid #abb2b9;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte1 {
     width: 150px;
@@ -83,5 +89,8 @@
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte4 .bloque4__parte4__quien-autoriza {
     width: 68%;
+  }
+  .all-content .right__print {
+    display: none;
   }
 }/*# sourceMappingURL=styles__print.css.map */

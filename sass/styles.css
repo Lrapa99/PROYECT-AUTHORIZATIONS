@@ -7,6 +7,9 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 150px) and (max-width: 670px) {
+  #alerts {
+    top: 50%;
+  }
   .all-content {
     flex-direction: column;
   }
@@ -85,6 +88,9 @@
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 670px) and (max-width: 768px) {
+  #alerts {
+    top: 50%;
+  }
   .all-content {
     flex-direction: column;
   }
@@ -165,6 +171,9 @@
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 1064px) {
+  #alerts {
+    top: 50%;
+  }
   .all-content {
     flex-direction: column;
   }
@@ -247,10 +256,6 @@
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1064px) and (max-width: 1600px) {
-  #alerts {
-    position: absolute;
-    width: auto;
-  }
   .all-content {
     flex-direction: row;
   }
@@ -371,7 +376,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #ABB2B9;
+  border-bottom: 2px solid #abb2b9;
   height: 120px;
 }
 .padre .all-content .left .formato__bloque1 .bloque1__parte1 {
@@ -400,7 +405,7 @@ body {
   color: #212f3d;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid #ABB2B9;
+  border-bottom: 2px solid #abb2b9;
   height: 180px;
 }
 .padre .all-content .left .formato__bloque2 #remiteA {
@@ -496,7 +501,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #ABB2B9;
+  border-bottom: 2px solid #abb2b9;
   padding-left: 20px;
   width: 100%;
   height: 50px;
@@ -515,7 +520,7 @@ body {
   align-items: center;
   padding-left: 20px;
   color: #212f3d;
-  border-bottom: 2px solid #ABB2B9;
+  border-bottom: 2px solid #abb2b9;
   height: 100px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado {
@@ -529,7 +534,7 @@ body {
   padding-left: 20px;
   width: 100%;
   color: #212f3d;
-  border-bottom: 2px solid #ABB2B9;
+  border-bottom: 2px solid #abb2b9;
   height: 100px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {

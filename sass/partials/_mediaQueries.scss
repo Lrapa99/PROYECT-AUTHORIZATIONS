@@ -1,7 +1,13 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 150px) and (max-width: 670px) {
+
+  
+  #alerts{
+    top: 50%;
+}
   .all-content {
     flex-direction: column;
+
 
     .left {
       .formato {
@@ -117,8 +123,15 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 670px) and (max-width: 768px) {
+ 
+  #alerts {
+    top: 50%;
+  }
+ 
   .all-content {
     flex-direction: column;
+
+  
 
     .left {
       .formato {
@@ -235,8 +248,16 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 1064px) {
+  
+  #alerts {
+    top: 50%;
+  }
+  
+  
   .all-content {
     flex-direction: column;
+
+
 
     .left {
       .formato {
@@ -355,12 +376,6 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1064px) and (max-width: 1600px) {
-
-  
-  #alerts{
-    position: absolute;
-    width: auto;
-  }
   .all-content {
     flex-direction: row;
 

@@ -151,6 +151,7 @@ const inputCopago = $("#copago")[0];
 //ocultar parte derecha, para imprimir
 const right__hidden = $("#right")[0];
 
+//*funcion para asignar nombres a pdf
 const getNameDocument = () => {
   //asignar nombres a pdf impresos
   const namePrintMaxilodent = `AUTORIZACION_MAXILODENT_`;
@@ -206,6 +207,7 @@ function getAlerts(cod, timeFadeOut = 7000) {
 
 btnPrint.click(() => {
   //console.log("imprimir");
+
   if (window.print) {
     try {
       const iconEstado = $("#estado")[0].lastChild.title;
@@ -235,69 +237,14 @@ btnPrint.click(() => {
         inputDocumento.value !== "" &&
         inputServicios1.value !== ""
       ) {
-        //ocultar parte derecha
-        right__hidden.className = "right__print";
+        showModal("Desea guardar los datos e imprimir?");
 
-        //Valor copago, formato de comas por cada 1000
-        if (inputCopago.value !== "") {
-          inputCopago.value = new Intl.NumberFormat("es-CO").format(
-            inputCopago.value
-          );
-        }
-
-        if (checkRadiologia[0].checked) {
-          document.title = getNameDocument();
-        }
-        if (checkMaxilodent[0].checked) {
-          document.title = getNameDocument();
-        }
-        if (checkCastulo[0].checked) {
-          document.title = getNameDocument();
-        }
-
-        if (inputServicios2.value == "") {
-          inputServicios2.placeholder = "";
-        }
-
-        window.print();
-
-        document.title = "Authorizacions";
-        right__hidden.className = "right";
-        inputServicios2.placeholder = "Servicios";
+        //console.log($("#exampleModal")[0]);
       } else {
+        const alertNoPrint = `<div class="alert alert-warning" role="alert">
+        Para continuar , debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios!</div>`;
 
-        const toast = $('<div>',{
-            'class': 'toast',
-            'role': 'alert',
-            'aria-live': 'assertive',
-            'aria-atomic': 'true'
-        }).append(
-          $('<div>',{
-            'class': 'toast-body',
-            'text': 'Hello, world! This is a toast message.'
-          }).append(
-            $('<div>',{
-              'class': 'mt-2 pt-2 border-top'
-            }).append(
-              $('<button>',{
-                  'type': 'button',
-                  'classs': 'btn btn-primary btn-sm',
-                  'text': 'take action'
-              }).append(
-                $('<button>',{
-                  'type': 'button',
-                  'classs': 'btn btn-secondary btn-sm',
-                  'data-bs-dismiss': 'toast',
-                  'text': 'close'
-              }
-              )
-            )
-          )
-        )
-        ).appendTo('#alerts')
-
-
-        console.log(toast);
+        getAlerts(alertNoPrint);
         // alert(
         //   "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
         // );
@@ -306,6 +253,61 @@ btnPrint.click(() => {
       //console.log(error);
     }
   }
+});
+
+//console.log($("#PrintBody")[0]);
+
+$("#modalAcept").click(() => {
+  $("#exampleModal").removeClass("fade");
+  //console.log("aceptado!!!");
+
+  //console.log($("#exampleModal")[0]);
+  //ocultar parte derecha
+  right__hidden.className = "right__print";
+
+  //Valor copago, formato de comas por cada 1000
+  if (inputCopago.value !== "") {
+    inputCopago.value = new Intl.NumberFormat("es-CO").format(
+      inputCopago.value
+    );
+  }
+
+  if (checkRadiologia[0].checked) {
+    document.title = getNameDocument();
+  }
+  if (checkMaxilodent[0].checked) {
+    document.title = getNameDocument();
+  }
+  if (checkCastulo[0].checked) {
+    document.title = getNameDocument();
+  }
+
+  if (inputServicios2.value == "") {
+    inputServicios2.placeholder = "";
+  }
+
+  $("#PrintBody").removeClass("hiddenPrintBody");
+
+  //console.log($("#PrintBody")[0]);
+
+  function showImpr() {
+    setTimeout(function () {
+      window.print();
+    }, 200);
+  }
+
+  function appConfig() {
+    setTimeout(function () {
+      document.title = "Authorizacions";
+      right__hidden.className = "right";
+      inputServicios2.placeholder = "Servicios";
+      $("#PrintBody").addClass("hiddenPrintBody");
+    }, 200);
+  }
+
+  showImpr();
+
+  appConfig();
 });
 
 //objecto con los campos a limpiar
@@ -334,6 +336,12 @@ const clearAll = (obj) => {
     obj[valor].value = "";
   }
 };
+
+function showModal(showText = "ingrese el texto a mostrar") {
+  $("#exampleModal").addClass("fade");
+  $("#showModal").trigger("click");
+  $("#text-modal").text(showText);
+}
 
 //al hacer click en el boton limpiar
 btnClear.click(() => {
