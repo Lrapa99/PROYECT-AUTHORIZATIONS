@@ -1,5 +1,7 @@
 @use "./partials/config";
 @use "./partials/mediaQueries";
+@use "./partials/formatoNoContratados";
+
 
 //variables
 
@@ -16,6 +18,8 @@ $color-coosalud: #75b948;
 $color-ilustracion: #f9a826;
 $color-linea: #abb2b9;
 
+
+
 body {
   background-color: $main-color;
   font-family: $body-font;
@@ -31,6 +35,8 @@ body {
   #alerts {
     position: absolute;
   }
+
+
   .all-content {
     display: flex;
     justify-content: space-between;
@@ -291,3 +297,6 @@ body {
     }
   }
 }
+
+
+

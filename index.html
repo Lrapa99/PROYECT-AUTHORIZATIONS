@@ -44,10 +44,17 @@
     </div>
   </div>
 
+
+  <!–Contenedor Padre –>
+
    <div class="padre animate__animated animate__zoomInDown">
     <span id="alerts"></span>
     <div class="all-content shadow-lg p-3 mb-5 bg-body rounded">
-        <div class="left rounded-3">
+
+
+        <!– Seccion Formato De Autorizaciones –>
+
+        <div style="display: none;" class="left rounded-3">
             <div class="formato" id="all-formato">
                 <div class="formato__bloque1">
                     <div class="bloque1__parte1">
@@ -173,6 +180,137 @@
                 </div>
             </div>
         </div>
+
+
+        <!– Seccion Formato Servicios No Contratados –>
+        <div class="left__formatoNoContratados" id="forma">
+            <div class="img__superSalud">
+                <img src="./img/superSalud.jpg" alt="">
+            </div>
+            <div class="left__formatoNoContratados__content">
+                <div class="content__parte1">
+                    <div class="content__parte1__logo">
+                        <img src="https://www.calidadmedicaips.com/wp-content/uploads/2018/07/logo-clidad.png" alt="MDN" id="logo-cmd">
+                    </div>
+                    <div class="content__parte1__title">
+                        <span>CORRESPONDENCIA EXTERNA</span>
+                    </div>
+                    <div class="content__parte1__cods">
+                        <div class="cods__1">
+                            <span>CODIGO: GIC-DO-010</span>
+                        </div>
+                        <div class="cods__2">
+                            <span>VERSION: 04</span>
+                        </div> <div class="cods__3">
+                            <span>VIGENCIA: ENERO 2021</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content__parte2">
+                    <div class="content__parte2__fecha">
+                        <span>Valledupar, 15 de septiembre 2022</span>
+                    </div>
+                    <div class="content__parte2__coosalud">
+                        <span>Señores</span>
+                        <span>COOSALUD</span>
+                        <span>Valledupar, Cesar</span>
+                    </div>
+                    <div class="content__parte2__asunto">
+                        <span>Asunto: Cotización de servicios</span>
+                    </div>
+                    <div class="content__parte2__cordialSaludo">
+                        <span>Cordial saludo;</span>
+                    </div>
+                    <div class="content__parte2__textSolicitud">
+                        <p>Muy amablemente me permito cotizar los servicios a tarifa institucional solicitados de la siguiente manera:</p>
+                    </div>
+                </div>
+                <div class="content__parte3">
+                    <div class="content__parte3__tableInfoPaciente">
+                        <div class="tableInfoPaciente__title">
+                            <span>INFORMACIÓN DEL PACIENTE</span>
+                        </div>
+                        <div class="tableInfoPaciente__infoInputs">
+                            <div class="infoInputs__data">
+                                <div class="data__name">
+                                    <span>NOMBRE</span>
+                                </div>
+                                <div class="data__ident">
+                                    <span>IDENTIFICACIÓN</span>
+                                </div>
+                            </div>
+                            <div class="infoInputs__insertData">
+                                <div class="insertData__name">
+                                    <input  type="text" class="form-control" id="nombres" placeholder="Nombres">
+                                </div>
+                                <div class="insertData__ident">
+                                    <input type="text" class="form-control" id="documento" placeholder="Documento"><div id="estado"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content__parte4">
+                    <div class="content__parte4__tableDescriptions">
+                        <div class="tableDescriptions__content">
+                            <div class="tableDescriptions__content__encabezado">
+                                <div ><span >CODIGO CUPS/CUMS</span></div>
+                                <div ><span >DESCRIPCIÓN</span></div>
+                                <div ><span >CANT</span></div>
+                                <div ><span >VALOR</span></div>     
+                            </div>
+                            <div class="tableDescriptions__content__desc">
+                                <div id="cod_cums">
+                                    <input  type="text" class="form-control" list="datalistOptions" id="cups" placeholder="Cups">
+                                </div>
+                                <div id="descriptions">
+                                    <input  type="text" class="form-control" list="datalistOptions" id="servicio" placeholder="Servicio">
+                                
+                                
+                                </div>
+                                <div id="cant">
+                                    <input  type="text" class="form-control" list="datalistOptions" id="cantidad" placeholder="Cantidad"></div>
+                                <div id="valor">
+                                    <input  type="number" class="form-control" list="datalistOptions" id="valor" placeholder="Valor">
+                                </div>
+                            </div>  
+                            <div class="tableDescriptions__valorTotal">
+                                <div><span>VALOR TOTAL</span></div>
+                                <div><span>$ 0</span></div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="content__parte5">
+                    <div class="content__parte5_p1">
+                        <p>Nota: Los servicios cotizados anteriormente deben tener visto bueno de la nacional Principalmente por los responsables Dr/a Jaime Gonzales - Claudia Morales. </p>
+                    </div>
+                    <div class="content__parte5_p2">
+                        <p>Los servicios relacionados anteriormente deben tener sede asociada para Calidad Medica en plataforma Dynamicoos con la finalidad de generar el # de autorizacion para el agendamiento del servicio.</p>
+                    </div>
+                </div>
+                <div class="content__parte6">
+                    <div class="content__parte6__desc">
+                        <div class="parte6__saludo">
+                            <span>Cordialmente, </span>
+                        </div>
+                        <div class="parte6__firmas">
+                            <div><span>EDWIN GONZALEZ GALLEGO</span><span>FACTURACION</span></div>
+                            <div><img src="./img/firma.png" height="40" alt="" id="firma"></div>
+                        </div>
+                        <div class="parte6__infoFooter">
+                            <span>Calle 18#12-83 SEDE PRINCIPAL</span>
+                            <span>gerencia@calidadmedicaips.com</span>
+                            <span>Teléfono: 5894008</span>
+                            <span>Valledupar, Cesar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!– Seccion Seleccionar Opciones  –>
         <div class="right" id="right">
             <div class="right__title"><span>Auto</span>rizaciones</div>
             <div class="ilustracion">

@@ -1,0 +1,150 @@
+//!Seccion Formato De Servicios No Contratados
+
+//variables
+
+$body-font: "Roboto", sans-serif;
+$main-color: #f8f9f9;
+$letra-black: #212f3d;
+$color-orange: #fad7a0;
+$right-color: #d5dbdb;
+$left-color: #aed6f1;
+$color-maxilodent: #1a939e;
+$color-radiologia: #e67e22;
+$color-castulo: #16a085;
+$color-coosalud: #75b948;
+$color-ilustracion: #f9a826;
+$color-linea: #abb2b9;
+
+.padre {
+  .all-content {
+    .left__formatoNoContratados {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      color: $letra-black;
+      .left__formatoNoContratados__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-weight: 500;
+        font-size: 13px;
+        border: 2px solid $letra-black;
+        background-color: $main-color;
+        .content__parte1 {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          text-align: center;
+          width: 100%;
+          //background-color: $left-color;
+          .content__parte1__logo {
+            img {
+              width: 100%;
+            }
+          }
+          .content__parte1__title {
+            font-weight: 700;
+          }
+        }
+
+        .content__parte2 {
+          //background-color: $left-color;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          text-align: center;
+        }
+
+        .content__parte3 {
+          //background-color: $left-color;
+          width: 90%;
+          .content__parte3__tableInfoPaciente {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            height: 150px;
+            .tableInfoPaciente__title {
+              background-color: $color-orange;
+              font-weight: 700;
+            }
+            .tableInfoPaciente__infoInputs {
+              display: flex;
+
+              .infoInputs__data {
+                width: 25%;
+                text-align: start;
+                font-size: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+              }
+              .infoInputs__insertData {
+                text-align: start;
+                width: 75%;
+                input {
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+
+        .content__parte4 {
+          // background-color: $left-color;
+          width: 90%;
+
+          //text-align: center;
+          .content__parte4__tableDescriptions {
+            display: flex;
+            flex-direction: column;
+            .tableDescriptions__content {
+              height: 100px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              .tableDescriptions__content__encabezado {
+                display: flex;
+                justify-content: space-between;
+                background-color: $color-orange;
+                font-weight: 700;
+                width: 100%;
+              }
+
+              .tableDescriptions__content__desc {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                //background-color: $left-color;
+                width: 100%;
+
+                input {
+                  font-size: 10px;
+                }
+              }
+
+              .tableDescriptions__valorTotal {
+                font-weight: 700;
+                display: flex;
+                justify-content: space-between;
+
+              }
+            }
+          }
+        }
+
+
+
+        .content__parte5{
+            background-color: $left-color;
+            width: 90%;
+            font-size: 11px;
+        }
+      }
+    }
+  }
+}
