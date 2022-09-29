@@ -205,9 +205,23 @@ function getAlerts(cod, timeFadeOut = 7000) {
   });
 }
 
+//funcion para mostrar modal de confirmacion
+function showModal(
+  showText = "ingrese el texto a mostrar",
+  srcImg = "ingrese src de animations",
+  hiddenButton,
+  showButton
+) {
+  $(`#${hiddenButton}`).hide();
+  $(`#${showButton}`).show();
+  $("#exampleModal").addClass("fade");
+  $("#showModal").trigger("click");
+  $("#text-modal").text(showText);
+  $("#img-modal").attr("src", `${srcImg}`);
+}
+
 btnPrint.click(() => {
   //console.log("imprimir");
-
   if (window.print) {
     try {
       const iconEstado = $("#estado")[0].lastChild.title;
@@ -226,7 +240,7 @@ btnPrint.click(() => {
         const alertNoEncontrado = `<div class="alert alert-danger" role="alert">
         No es posible continuar, los datos del usuario no fueron encontrados!</div>`;
 
-        return getAlerts(alertNoEncontrado);
+        getAlerts(alertNoEncontrado);
         // return alert(
         //   "No es posible continuar, los datos del usuario no fueron encontrados"
         // );
@@ -237,7 +251,14 @@ btnPrint.click(() => {
         inputDocumento.value !== "" &&
         inputServicios1.value !== ""
       ) {
-        showModal("Desea guardar los datos e imprimir?");
+        showModal(
+          "Desea guardar los datos e imprimir?",
+          "./img/gitSaveDatos.gif",
+          "modalAceptClear",
+          "modalAceptPrint"
+        );
+
+        //console.log($(".modalConfirm").prop("id"));
 
         //console.log($("#exampleModal")[0]);
       } else {
@@ -257,7 +278,7 @@ btnPrint.click(() => {
 
 //console.log($("#PrintBody")[0]);
 
-$("#modalAcept").click(() => {
+$("#modalAceptPrint").click(() => {
   $("#exampleModal").removeClass("fade");
   //console.log("aceptado!!!");
 
@@ -296,7 +317,7 @@ $("#modalAcept").click(() => {
     }, 200);
   }
 
-  function appConfig() {
+  function appConfigPrint() {
     setTimeout(function () {
       document.title = "Authorizacions";
       right__hidden.className = "right";
@@ -307,7 +328,36 @@ $("#modalAcept").click(() => {
 
   showImpr();
 
-  appConfig();
+  appConfigPrint();
+});
+
+//al hacer click en el boton limpiar
+btnClear.click(() => {
+  //console.log("limpiar");
+  if (
+    inputNombres.value !== "" ||
+    inputDocumento.value !== "" ||
+    inputServicios1.value !== "" ||
+    inputServicios2.value !== "" ||
+    inputCopago.value !== ""
+  ) {
+    showModal(
+      "Se limpiaran todos los datos, desea continuar?",
+      "./img/clear.gif",
+      "modalAceptPrint",
+      "modalAceptClear"
+    );
+
+    //console.log($(".modalConfirm").prop("id"));
+
+    // const confirmacion = confirm("Se limpiaran todos los datos");
+    //confirmacion ? clearAll(valuesClear) : ""; //invocamos la funcion para limpiar
+  }
+});
+
+$("#modalAceptClear").click(() => {
+  //console.log("clear");
+  clearAll(valuesClear);
 });
 
 //objecto con los campos a limpiar
@@ -336,27 +386,6 @@ const clearAll = (obj) => {
     obj[valor].value = "";
   }
 };
-
-function showModal(showText = "ingrese el texto a mostrar") {
-  $("#exampleModal").addClass("fade");
-  $("#showModal").trigger("click");
-  $("#text-modal").text(showText);
-}
-
-//al hacer click en el boton limpiar
-btnClear.click(() => {
-  //console.log("limpiar");
-  if (
-    inputNombres.value !== "" ||
-    inputDocumento.value !== "" ||
-    inputServicios1.value !== "" ||
-    inputServicios2.value !== "" ||
-    inputCopago.value !== ""
-  ) {
-    const confirmacion = confirm("Se limpiaran todos los datos");
-    confirmacion ? clearAll(valuesClear) : ""; //invocamos la funcion para limpiar
-  }
-});
 
 checkRadiologia.click(() => {
   if (checkRadiologia[0].checked) {
