@@ -484,33 +484,36 @@ $(document).on("keydown", function (e) {
 
 const btnAutorizaciones = $("#btn_autorizaciones");
 const btnCotizaciones = $("#btn_cotizaciones");
-const spanTitle = $("#spanTitle_format");
+const spanTitle1 = $("#spanTitle_format_autorizaciones");
+const spanTitle2 = $("#spanTitle_format_cotizaciones");
 const formatCotizaciones = $("#format_cotizaciones");
 const formatAutorizaciones = $("#format_autorizaciones");
 const checkList = $(".right__options");
 
 btnAutorizaciones.click(() => {
-  console.log("autorizaciones");
-  btnAutorizaciones.css("display", "none");
-  btnCotizaciones.css("display", "block");
-  spanTitle.html(`<span>Auto</span>rizaciones`);
+  //console.log("autorizaciones");
+  btnAutorizaciones.hide()
+  btnCotizaciones.show()
+  spanTitle2.hide('slow')
+  spanTitle1.show('slow')
   ilustracion[0].src = "./img/ilustracionMaxilodent.svg";
   formatCotizaciones.hide();
-  checkList.show();
-  formatAutorizaciones.show();
+  checkList.show('slow');
+  formatAutorizaciones.show('slow');
   // formatCotizaciones.css("display", "none");
   // formatAutorizaciones.css("display", "block");
 });
 
 btnCotizaciones.click(() => {
-  console.log("cotizaciones");
-  btnCotizaciones.css("display", "none");
-  btnAutorizaciones.css("display", "block");
-  spanTitle.html(`<span>Coti</span>zaciones`);
+  //console.log("cotizaciones");
+  btnCotizaciones.hide()
+  btnAutorizaciones.show()
+  spanTitle1.hide('slow')
+  spanTitle2.show('slow')
   ilustracion[0].src = "./img/ilustracionCotizaciones.svg";
   formatAutorizaciones.hide();
-  checkList.hide();
-  formatCotizaciones.show();
+  checkList.hide('slow');
+  formatCotizaciones.show('slow');
   // formatAutorizaciones.css("display", "none");
   // formatCotizaciones.css("display", "block");
 });

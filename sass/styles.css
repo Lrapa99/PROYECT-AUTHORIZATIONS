@@ -324,6 +324,10 @@
   display: none;
 }
 
+#spanTitle_format_cotizaciones {
+  display: none;
+}
+
 .padre .all-content .left__formatoNoContratados {
   display: flex;
   flex-direction: column;
