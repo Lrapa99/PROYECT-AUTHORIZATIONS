@@ -1,15 +1,14 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 150px) and (max-width: 670px) {
-
-  
-  #alerts{
+  #alerts {
     top: 50%;
-}
+  }
   .all-content {
     flex-direction: column;
 
-
     .left {
+
+      margin-top: 40px;
       .formato {
         font-size: 10px;
 
@@ -80,19 +79,10 @@
             }
           }
 
-          .bloque4__parte2 {
-            .bloque4__parte2__img-resultado {
-              img {
-                width: 50%;
-                height: 90%;
-              }
-            }
-          }
-
           .bloque4__parte3 {
             .bloque4__parte3__firma {
               img {
-                width: 40%;
+                width: 100px;
               }
             }
           }
@@ -123,17 +113,15 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 670px) and (max-width: 768px) {
- 
   #alerts {
     top: 50%;
   }
- 
+
   .all-content {
     flex-direction: column;
 
-  
-
     .left {
+      margin-top: 40px;
       .formato {
         font-size: 10px;
 
@@ -203,24 +191,7 @@
             }
           }
 
-          .bloque4__parte2 {
-            .bloque4__parte2__img-resultado {
-              img {
-                width: 50%;
-                height: 90%;
-              }
-            }
-          }
-
-          .bloque4__parte3 {
-            .bloque4__parte3__firma {
-              margin-left: 30px;
-
-              img {
-                width: 40%;
-              }
-            }
-          }
+      
         }
       }
     }
@@ -248,18 +219,15 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 1064px) {
-  
   #alerts {
     top: 50%;
   }
-  
-  
+
   .all-content {
     flex-direction: column;
 
-
-
     .left {
+      margin-top: 20px;
       .formato {
         font-size: 12px;
 
@@ -328,25 +296,6 @@
           .bloque4__parte1 {
             input {
               font-size: 12px;
-            }
-          }
-
-          .bloque4__parte2 {
-            .bloque4__parte2__img-resultado {
-              img {
-                width: 200px;
-                height: 90%;
-              }
-            }
-          }
-
-          .bloque4__parte3 {
-            .bloque4__parte3__firma {
-              margin-left: 30px;
-
-              img {
-                width: 30%;
-              }
             }
           }
         }
@@ -450,24 +399,6 @@
             }
           }
 
-          .bloque4__parte2 {
-            .bloque4__parte2__img-resultado {
-              img {
-                width: 200px;
-                height: 90%;
-              }
-            }
-          }
-
-          .bloque4__parte3 {
-            .bloque4__parte3__firma {
-              margin-left: 30px;
-
-              img {
-                width: 30%;
-              }
-            }
-          }
         }
       }
     }

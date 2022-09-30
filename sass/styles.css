@@ -13,6 +13,9 @@
   .all-content {
     flex-direction: column;
   }
+  .all-content .left {
+    margin-top: 40px;
+  }
   .all-content .left .formato {
     font-size: 10px;
   }
@@ -61,12 +64,8 @@
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
     font-size: 10px;
   }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
-    width: 50%;
-    height: 90%;
-  }
   .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma img {
-    width: 40%;
+    width: 100px;
   }
   .all-content .right {
     font-size: 15px;
@@ -93,6 +92,9 @@
   }
   .all-content {
     flex-direction: column;
+  }
+  .all-content .left {
+    margin-top: 40px;
   }
   .all-content .left .formato {
     font-size: 10px;
@@ -141,16 +143,6 @@
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
     font-size: 10px;
   }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
-    width: 50%;
-    height: 90%;
-  }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {
-    margin-left: 30px;
-  }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma img {
-    width: 40%;
-  }
   .all-content .right {
     font-size: 15px;
     margin-top: 30px;
@@ -176,6 +168,9 @@
   }
   .all-content {
     flex-direction: column;
+  }
+  .all-content .left {
+    margin-top: 20px;
   }
   .all-content .left .formato {
     font-size: 12px;
@@ -225,16 +220,6 @@
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
     font-size: 12px;
-  }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
-    width: 200px;
-    height: 90%;
-  }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {
-    margin-left: 30px;
-  }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma img {
-    width: 30%;
   }
   .all-content .right {
     font-size: 15px;
@@ -307,16 +292,6 @@
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
     font-size: 12px;
   }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
-    width: 200px;
-    height: 90%;
-  }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {
-    margin-left: 30px;
-  }
-  .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma img {
-    width: 30%;
-  }
   .all-content .right {
     font-size: 15px;
     margin-top: 30px;
@@ -355,19 +330,19 @@
   width: 100%;
   height: 100%;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 11px;
   border: 2px solid #212f3d;
-  background-color: #f8f9f9;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 100%;
+  width: 90%;
+  border-bottom: 2px solid #abb2b9;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__logo img {
-  width: 100%;
+  width: 80%;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__title {
   font-weight: 700;
@@ -377,6 +352,8 @@
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
+  width: 90%;
+  border-bottom: 2px solid #abb2b9;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 {
   width: 90%;
@@ -394,6 +371,7 @@
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs {
   display: flex;
+  font-weight: 700;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__data {
   width: 25%;
@@ -426,6 +404,7 @@
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #fad7a0;
   font-weight: 700;
   width: 100%;
@@ -443,13 +422,143 @@
   font-weight: 700;
   display: flex;
   justify-content: space-between;
+  border-bottom: 2px solid #abb2b9;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte5 {
-  background-color: #aed6f1;
   width: 90%;
-  font-size: 11px;
+  font-weight: 700;
+  margin-top: 20px;
+  border-bottom: 2px solid #abb2b9;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 {
+  width: 90%;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-around;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__firmas {
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #abb2b9;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__firmas img {
+  width: 100px;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__infoFooter {
+  display: flex;
+  flex-direction: column;
+  color: grey;
 }
 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 670px) and (max-width: 770px) {
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 13px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado {
+    text-align: center;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cod {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_desc {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_valor {
+    width: 20%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cod_cums {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #descriptions {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #class_valor {
+    width: 20%;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 770px) and (max-width: 1070px) {
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 14px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado {
+    text-align: center;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cod {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_desc {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_valor {
+    width: 20%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cod_cums {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #descriptions {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #class_valor {
+    width: 20%;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1070px) and (max-width: 2000px) {
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 14px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 {
+    text-align: start;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc {
+    height: 250px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado {
+    text-align: center;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cod {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_desc {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_valor {
+    width: 20%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cod_cums {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #descriptions {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #class_valor {
+    width: 20%;
+  }
+}
 body {
   background-color: #f8f9f9;
   font-family: "Roboto", sans-serif;
@@ -593,11 +702,16 @@ body {
   display: flex;
   align-items: center;
 }
+.padre .all-content .left .formato__bloque3 .bloque3__parte2 .bloque3__parte2__input__estudio {
+  margin-bottom: 10px;
+}
 .padre .all-content .left .formato__bloque3 .bloque3__parte2 #nombres {
   width: 90%;
+  margin: 20px 0 27px 0;
 }
 .padre .all-content .left .formato__bloque3 .bloque3__parte2 #documento {
   width: 90%;
+  margin-bottom: 20px;
 }
 .padre .all-content .left .formato__bloque3 .bloque3__parte2 #servicios {
   width: 98%;
@@ -630,40 +744,41 @@ body {
   padding-left: 20px;
   color: #212f3d;
   border-bottom: 2px solid #abb2b9;
-  height: 100px;
+  height: 80px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado {
   width: 80%;
   display: flex;
   justify-content: center;
 }
+.padre .all-content .left .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
+  height: 70px;
+}
 .padre .all-content .left .formato__bloque4 .bloque4__parte3 {
   display: flex;
   align-items: center;
   padding-left: 20px;
-  width: 100%;
   color: #212f3d;
   border-bottom: 2px solid #abb2b9;
-  height: 100px;
+  height: 60px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma {
   display: flex;
-  justify-content: space-between;
-  margin-left: 200px;
-  width: 75%;
+  justify-content: space-around;
+  width: 100%;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte4 {
   color: #212f3d;
   display: flex;
   align-items: center;
   padding-left: 20px;
-  height: 85px;
+  height: 60px;
 }
 .padre .all-content .left .formato__bloque4 .bloque4__parte4 .bloque4__parte4__quien-autoriza {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 87%;
+  width: 100%;
 }
 .padre .all-content .right__print {
   display: none;

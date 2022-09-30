@@ -54,7 +54,7 @@
 
         <!– Seccion Formato De Autorizaciones –>
 
-        <div style="display: none;" class="left rounded-3">
+        <div class="left rounded-3">
             <div class="formato" id="all-formato">
                 <div class="formato__bloque1">
                     <div class="bloque1__parte1">
@@ -114,6 +114,7 @@
                         </div>
                         <div class="bloque3__parte2__input__estudio">
                             <input  type="text" class="form-control" list="datalistOptions" id="servicios1" placeholder="Servicios">
+                            <input  type="text" class="form-control" list="datalistOptions" id="servicios2" placeholder="Servicios">
                             <input  type="text" class="form-control" list="datalistOptions" id="servicios2" placeholder="Servicios">
                             <datalist id="datalistOptions">
                                 <option value="870114-RADIOGRAFIA PANORAMICA DE MAXILARES, SUPERIOR E INFERIOR (ORTOPANTOMOGRAFIA)">
@@ -183,7 +184,7 @@
 
 
         <!– Seccion Formato Servicios No Contratados –>
-        <div class="left__formatoNoContratados" id="forma">
+        <div style="display:none;" class="left__formatoNoContratados" id="forma">
             <div class="img__superSalud">
                 <img src="./img/superSalud.jpg" alt="">
             </div>
@@ -254,10 +255,10 @@
                     <div class="content__parte4__tableDescriptions">
                         <div class="tableDescriptions__content">
                             <div class="tableDescriptions__content__encabezado">
-                                <div ><span >CODIGO CUPS/CUMS</span></div>
-                                <div ><span >DESCRIPCIÓN</span></div>
-                                <div ><span >CANT</span></div>
-                                <div ><span >VALOR</span></div>     
+                                <div class="enca_cod"><span >CODIGO CUPS/CUMS</span></div>
+                                <div class="enca_desc"><span >DESCRIPCIÓN</span></div>
+                                <div class="enca_cant"><span >CANT</span></div>
+                                <div class="enca_valor"><span >VALOR</span></div>     
                             </div>
                             <div class="tableDescriptions__content__desc">
                                 <div id="cod_cums">
@@ -270,7 +271,7 @@
                                 </div>
                                 <div id="cant">
                                     <input  type="text" class="form-control" list="datalistOptions" id="cantidad" placeholder="Cantidad"></div>
-                                <div id="valor">
+                                <div id="class_valor">
                                     <input  type="number" class="form-control" list="datalistOptions" id="valor" placeholder="Valor">
                                 </div>
                             </div>  
@@ -295,7 +296,8 @@
                             <span>Cordialmente, </span>
                         </div>
                         <div class="parte6__firmas">
-                            <div><span>EDWIN GONZALEZ GALLEGO</span><span>FACTURACION</span></div>
+                            <div><span>EDWIN GONZALEZ GALLEGO<br>
+                                FACTURACION</span></div>
                             <div><img src="./img/firma.png" height="40" alt="" id="firma"></div>
                         </div>
                         <div class="parte6__infoFooter">
