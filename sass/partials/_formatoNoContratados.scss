@@ -5,7 +5,7 @@
 $body-font: "Roboto", sans-serif;
 $main-color: #f8f9f9;
 $letra-black: #212f3d;
-$color-orange: #fad7a0;
+$color-orange: #EDBB99;
 $right-color: #d5dbdb;
 $left-color: #aed6f1;
 $color-maxilodent: #1a939e;
@@ -15,14 +15,40 @@ $color-coosalud: #75b948;
 $color-ilustracion: #f9a826;
 $color-linea: #abb2b9;
 
+#btn_autorizaciones {
+  display: none;
+}
+
+#format_cotizaciones{
+  display: none;
+}
 .padre {
   .all-content {
     .left__formatoNoContratados {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-end;
+      //align-items: flex-end;
       color: $letra-black;
+      position: relative;
+      width: 100%;
+      .img__superSalud {
+        position: relative;
+        text-align: end;
+      }
+      &::before {
+        content: "";
+        background-image: url("/img/fondoLogo.jpg");
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.5;
+      }
       .left__formatoNoContratados__content {
         display: flex;
         flex-direction: column;
@@ -32,7 +58,10 @@ $color-linea: #abb2b9;
         font-weight: 500;
         font-size: 11px;
         border: 2px solid $letra-black;
+        position: relative;
+
         .content__parte1 {
+          opacity: 0.7;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -227,8 +256,9 @@ $color-linea: #abb2b9;
   .padre {
     .all-content {
       .left__formatoNoContratados {
+        width: 90%;
         .left__formatoNoContratados__content {
-          font-size: 14px;
+          font-size: 13px;
 
           .tableDescriptions__content__encabezado {
             text-align: center;
@@ -268,12 +298,67 @@ $color-linea: #abb2b9;
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1070px) and (max-width: 2000px) {
+@media only screen and (min-width: 1070px) and (max-width: 1600px) {
   .padre {
     .all-content {
       .left__formatoNoContratados {
+        width: 90%;
         .left__formatoNoContratados__content {
-          font-size: 14px;
+          font-size: 13px;
+          .content__parte2 {
+            text-align: start;
+          }
+          .content__parte6 {
+            .content__parte6__desc {
+              height: 250px;
+            }
+          }
+          .tableDescriptions__content__encabezado {
+            text-align: center;
+            .enca_cod {
+              width: 15%;
+            }
+
+            .enca_desc {
+              width: 60%;
+            }
+
+            .enca_cant {
+              width: 10%;
+            }
+
+            .enca_valor {
+              width: 20%;
+            }
+          }
+
+          #cod_cums {
+            width: 15%;
+          }
+          #descriptions {
+            width: 60%;
+          }
+          #cant {
+            width: 10%;
+          }
+          #class_valor {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1600px) and (max-width: 2000px) {
+  .padre {
+    .all-content {
+      .left__formatoNoContratados {
+        width: 60%;
+        margin-left: 50px;
+        .left__formatoNoContratados__content {
+          font-size: 13px;
           .content__parte2 {
             text-align: start;
           }

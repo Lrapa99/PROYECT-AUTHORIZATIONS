@@ -146,6 +146,7 @@ const inputNombres = $("#nombres")[0];
 const inputDocumento = $("#documento")[0];
 const inputServicios1 = $("#servicios1")[0];
 const inputServicios2 = $("#servicios2")[0];
+const inputServicios3 = $("#servicios3")[0];
 const inputCopago = $("#copago")[0];
 
 //ocultar parte derecha, para imprimir
@@ -288,9 +289,12 @@ $("#modalAceptPrint").click(() => {
 
   //Valor copago, formato de comas por cada 1000
   if (inputCopago.value !== "") {
-    inputCopago.value = new Intl.NumberFormat("es-CO").format(
-      inputCopago.value
-    );
+    let copagoValue = inputCopago.value;
+    let newValorCopago = new Intl.NumberFormat("es-419").format(copagoValue);
+
+    $("#copago").val(newValorCopago);
+
+    //console.log(newValorCopago);
   }
 
   if (checkRadiologia[0].checked) {
@@ -303,8 +307,9 @@ $("#modalAceptPrint").click(() => {
     document.title = getNameDocument();
   }
 
-  if (inputServicios2.value == "") {
+  if (inputServicios2.value == "" || inputServicios3.value == "") {
     inputServicios2.placeholder = "";
+    inputServicios3.placeholder = "";
   }
 
   $("#PrintBody").removeClass("hiddenPrintBody");
@@ -339,6 +344,7 @@ btnClear.click(() => {
     inputDocumento.value !== "" ||
     inputServicios1.value !== "" ||
     inputServicios2.value !== "" ||
+    inputServicios3.value ||
     inputCopago.value !== ""
   ) {
     showModal(
@@ -366,13 +372,14 @@ const valuesClear = {
   2: inputDocumento,
   3: inputServicios1,
   4: inputServicios2,
-  5: inputCopago,
+  5: inputServicios3,
+  6: inputCopago,
 };
 
 //funcion para limpiar solo los campos servicios
 const clearServicies = (obj) => {
   for (const valor in obj) {
-    if (valor == 3 || valor == 4 || valor == 5) {
+    if (valor == 3 || valor == 4 || valor == 5 || valor == 6) {
       obj[valor].value = "";
     }
   }
@@ -398,7 +405,7 @@ checkRadiologia.click(() => {
     horario.html("07:00AM A 06:00PM (JORNADA CONTINUA)");
     whatsapp.html(" 3205684881");
     fijo.html(" 5715071 - 5807908");
-    ilustracion[0].src = "./img/undraw_job_hunt_re_q203.svg";
+    ilustracion[0].src = "./img/ilustracionRadiologia.svg";
     clearServicies(valuesClear);
   }
 });
@@ -414,7 +421,7 @@ checkMaxilodent.click(() => {
     horario.html("08:00AM A 12:30PM - 02:00PM A 06:00PM");
     whatsapp.html(" 3135249123");
     fijo.html(" 5837886");
-    ilustracion[0].src = "./img/undraw_completed_tasks_vs6q.svg";
+    ilustracion[0].src = "./img/ilustracionMaxilodent.svg";
     clearServicies(valuesClear);
   }
 });
@@ -432,7 +439,7 @@ checkCastulo.click(() => {
     );
     whatsapp.html(" 3174392224");
     fijo.html(" 5711869");
-    ilustracion[0].src = "./img/undraw_collaboration_re_vyau.svg";
+    ilustracion[0].src = "./img/ilustracionCastulo.svg";
     clearServicies(valuesClear);
   }
 });
@@ -473,4 +480,37 @@ $(document).on("keydown", function (e) {
 
     e.stopImmediatePropagation();
   }
+});
+
+const btnAutorizaciones = $("#btn_autorizaciones");
+const btnCotizaciones = $("#btn_cotizaciones");
+const spanTitle = $("#spanTitle_format");
+const formatCotizaciones = $("#format_cotizaciones");
+const formatAutorizaciones = $("#format_autorizaciones");
+const checkList = $(".right__options");
+
+btnAutorizaciones.click(() => {
+  console.log("autorizaciones");
+  btnAutorizaciones.css("display", "none");
+  btnCotizaciones.css("display", "block");
+  spanTitle.html(`<span>Auto</span>rizaciones`);
+  ilustracion[0].src = "./img/ilustracionMaxilodent.svg";
+  formatCotizaciones.hide();
+  checkList.show();
+  formatAutorizaciones.show();
+  // formatCotizaciones.css("display", "none");
+  // formatAutorizaciones.css("display", "block");
+});
+
+btnCotizaciones.click(() => {
+  console.log("cotizaciones");
+  btnCotizaciones.css("display", "none");
+  btnAutorizaciones.css("display", "block");
+  spanTitle.html(`<span>Coti</span>zaciones`);
+  ilustracion[0].src = "./img/ilustracionCotizaciones.svg";
+  formatAutorizaciones.hide();
+  checkList.hide();
+  formatCotizaciones.show();
+  // formatAutorizaciones.css("display", "none");
+  // formatCotizaciones.css("display", "block");
 });

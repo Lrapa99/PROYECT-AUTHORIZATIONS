@@ -54,7 +54,7 @@
 
         <!– Seccion Formato De Autorizaciones –>
 
-        <div class="left rounded-3">
+        <div class="left rounded-3" id="format_autorizaciones">
             <div class="formato" id="all-formato">
                 <div class="formato__bloque1">
                     <div class="bloque1__parte1">
@@ -115,7 +115,7 @@
                         <div class="bloque3__parte2__input__estudio">
                             <input  type="text" class="form-control" list="datalistOptions" id="servicios1" placeholder="Servicios">
                             <input  type="text" class="form-control" list="datalistOptions" id="servicios2" placeholder="Servicios">
-                            <input  type="text" class="form-control" list="datalistOptions" id="servicios2" placeholder="Servicios">
+                            <input  type="text" class="form-control" list="datalistOptions" id="servicios3" placeholder="Servicios">
                             <datalist id="datalistOptions">
                                 <option value="870114-RADIOGRAFIA PANORAMICA DE MAXILARES, SUPERIOR E INFERIOR (ORTOPANTOMOGRAFIA)">
                                 <option value="870456-RADIOGRAFÍAS INTRAORALES PERIAPICALES JUEGO COMPLETO">
@@ -156,7 +156,7 @@
                     <div class="bloque4__parte1">
                         <span>COPAGO CANCELADO:</span><i class="fa-regular fa-dollar-sign"></i>
                         <div class="bloque4__parte1__copago">
-                            <input type="number" class="form-control" id="copago" placeholder="0">
+                            <input type="text" class="form-control" id="copago" placeholder="0">
                         </div>
                     </div>
                     <div class="bloque4__parte2">
@@ -184,7 +184,7 @@
 
 
         <!– Seccion Formato Servicios No Contratados –>
-        <div style="display:none;" class="left__formatoNoContratados" id="forma">
+        <div class="left__formatoNoContratados" id="format_cotizaciones">
             <div class="img__superSalud">
                 <img src="./img/superSalud.jpg" alt="">
             </div>
@@ -314,9 +314,20 @@
 
         <!– Seccion Seleccionar Opciones  –>
         <div class="right" id="right">
-            <div class="right__title"><span>Auto</span>rizaciones</div>
+                <div class="right__title_change_format">
+                    <div class="right__title" id="spanTitle_format"><span>Auto</span>rizaciones</div>                                <!-- Example single danger button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </button>
+                        <ul class="dropdown-menu">       
+                        <li><a class="dropdown-item" href="#" id="btn_autorizaciones">Autorizaciones</a></li>
+                        <li><a class="dropdown-item" href="#" id="btn_cotizaciones">Cotizaciones</a></li>
+                        </ul>
+                    </div>
+                </div>
             <div class="ilustracion">
-                <img id="img__ilustracion" src="./img/undraw_completed_tasks_vs6q.svg" alt="" height="300" width="300" >
+                <img id="img__ilustracion" src="./img/ilustracionMaxilodent.svg" alt="" height="300" width="300" >
             </div>
             <div class="right__options">
                 <div class="form-check">
@@ -342,10 +353,10 @@
                 <button type="button" class="btn btn-warning" id="btn__print">Generar</button>
                 <button type="button" style="display: none;" class="btn btn-warning" id="btn__generatePdf">Generar PDF</button>
                 <button type="button" class="btn btn-dark" id="btn__clear">Limpiar</button>
-            </div>
-        </div>
-    </div>
-   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/6f4c79b44d.js" crossorigin="anonymous"></script>

@@ -175,7 +175,6 @@ body {
 
           .bloque3__parte2__input__documento {
             display: flex;
-            align-items: center;
           }
 
           .bloque3__parte2__input__estudio {
@@ -289,10 +288,17 @@ body {
         background-color: $color-ilustracion;
       }
 
+      .right__title_change_format {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
       .right__title {
         font-size: 3em;
         font-weight: 700;
         color: $letra-black;
+        margin-right: 20px;
         span {
           color: $color-ilustracion;
         }

@@ -316,12 +316,38 @@
     margin-bottom: 10px;
   }
 }
+#btn_autorizaciones {
+  display: none;
+}
+
+#format_cotizaciones {
+  display: none;
+}
+
 .padre .all-content .left__formatoNoContratados {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
   color: #212f3d;
+  position: relative;
+  width: 100%;
+}
+.padre .all-content .left__formatoNoContratados .img__superSalud {
+  position: relative;
+  text-align: end;
+}
+.padre .all-content .left__formatoNoContratados::before {
+  content: "";
+  background-image: url("/img/fondoLogo.jpg");
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
   display: flex;
@@ -332,8 +358,10 @@
   font-weight: 500;
   font-size: 11px;
   border: 2px solid #212f3d;
+  position: relative;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 {
+  opacity: 0.7;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -366,7 +394,7 @@
   height: 150px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__title {
-  background-color: #fad7a0;
+  background-color: #EDBB99;
   font-weight: 700;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs {
@@ -405,7 +433,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fad7a0;
+  background-color: #EDBB99;
   font-weight: 700;
   width: 100%;
 }
@@ -489,8 +517,11 @@
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 770px) and (max-width: 1070px) {
+  .padre .all-content .left__formatoNoContratados {
+    width: 90%;
+  }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
-    font-size: 14px;
+    font-size: 13px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado {
     text-align: center;
@@ -521,9 +552,55 @@
   }
 }
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1070px) and (max-width: 2000px) {
+@media only screen and (min-width: 1070px) and (max-width: 1600px) {
+  .padre .all-content .left__formatoNoContratados {
+    width: 90%;
+  }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 {
+    text-align: start;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc {
+    height: 250px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado {
+    text-align: center;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cod {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_desc {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__encabezado .enca_valor {
+    width: 20%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cod_cums {
+    width: 15%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #descriptions {
+    width: 60%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #cant {
+    width: 10%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content #class_valor {
+    width: 20%;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1600px) and (max-width: 2000px) {
+  .padre .all-content .left__formatoNoContratados {
+    width: 60%;
+    margin-left: 50px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 13px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 {
     text-align: start;
@@ -700,7 +777,6 @@ body {
 }
 .padre .all-content .left .formato__bloque3 .bloque3__parte2 .bloque3__parte2__input__documento {
   display: flex;
-  align-items: center;
 }
 .padre .all-content .left .formato__bloque3 .bloque3__parte2 .bloque3__parte2__input__estudio {
   margin-bottom: 10px;
@@ -796,10 +872,16 @@ body {
 .padre .all-content .right input:checked {
   background-color: #f9a826;
 }
+.padre .all-content .right .right__title_change_format {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .padre .all-content .right .right__title {
   font-size: 3em;
   font-weight: 700;
   color: #212f3d;
+  margin-right: 20px;
 }
 .padre .all-content .right .right__title span {
   color: #f9a826;

@@ -54,6 +54,7 @@
     font-size: 11px;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 {
+    height: 260px;
     padding-left: 3px;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 input {
@@ -65,10 +66,9 @@
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 #documento {
     width: 90%;
-    margin-top: 14px;
   }
-  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #servicios2 {
-    margin-bottom: 7px;
+  .all-content .left .formato .formato__bloque3 .bloque3__parte2 #servicios3 {
+    margin-bottom: 40px;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
     font-size: 12px;
