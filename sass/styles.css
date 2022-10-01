@@ -328,6 +328,10 @@
   display: none;
 }
 
+#img__ilustracion_cotizaciones {
+  display: none;
+}
+
 .padre .all-content .left__formatoNoContratados {
   display: flex;
   flex-direction: column;
@@ -398,7 +402,7 @@
   height: 150px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__title {
-  background-color: #EDBB99;
+  background-color: #edbb99;
   font-weight: 700;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs {
@@ -437,7 +441,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #EDBB99;
+  background-color: #edbb99;
   font-weight: 700;
   width: 100%;
 }

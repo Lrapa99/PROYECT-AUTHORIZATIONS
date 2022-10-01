@@ -5,7 +5,7 @@
 $body-font: "Roboto", sans-serif;
 $main-color: #f8f9f9;
 $letra-black: #212f3d;
-$color-orange: #EDBB99;
+$color-orange: #edbb99;
 $right-color: #d5dbdb;
 $left-color: #aed6f1;
 $color-maxilodent: #1a939e;
@@ -19,11 +19,14 @@ $color-linea: #abb2b9;
   display: none;
 }
 
-#format_cotizaciones{
+#format_cotizaciones {
   display: none;
 }
 
-#spanTitle_format_cotizaciones{
+#spanTitle_format_cotizaciones {
+  display: none;
+}
+#img__ilustracion_cotizaciones {
   display: none;
 }
 .padre {

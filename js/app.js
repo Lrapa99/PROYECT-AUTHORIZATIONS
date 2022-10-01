@@ -135,7 +135,7 @@ const horario = $("#horario");
 const whatsapp = $("#whatsapp");
 const fijo = $("#tel__fijo");
 const formato = $("#all-formato");
-const ilustracion = $("#img__ilustracion");
+const ilustracion = $("#img__ilustracion_autorizaciones");
 
 //botones
 const btnPrint = $("#btn__print");
@@ -196,7 +196,7 @@ const getNameDocument = () => {
 //console.log(getNameDocument());
 
 //funcion para mostrar y ocultar alertas
-function getAlerts(cod, timeFadeOut = 7000) {
+function getAlerts(cod, timeFadeOut = 4000) {
   $("#alerts").fadeIn(100, function () {
     $(this).html(cod);
   });
@@ -241,7 +241,7 @@ btnPrint.click(() => {
         const alertNoEncontrado = `<div class="alert alert-danger" role="alert">
         No es posible continuar, los datos del usuario no fueron encontrados!</div>`;
 
-        getAlerts(alertNoEncontrado);
+        return getAlerts(alertNoEncontrado);
         // return alert(
         //   "No es posible continuar, los datos del usuario no fueron encontrados"
         // );
@@ -489,31 +489,34 @@ const spanTitle2 = $("#spanTitle_format_cotizaciones");
 const formatCotizaciones = $("#format_cotizaciones");
 const formatAutorizaciones = $("#format_autorizaciones");
 const checkList = $(".right__options");
+const ilustracionCotizaciones = $("#img__ilustracion_cotizaciones");
 
 btnAutorizaciones.click(() => {
   //console.log("autorizaciones");
-  btnAutorizaciones.hide()
-  btnCotizaciones.show()
-  spanTitle2.hide('slow')
-  spanTitle1.show('slow')
-  ilustracion[0].src = "./img/ilustracionMaxilodent.svg";
+  btnAutorizaciones.hide();
+  btnCotizaciones.show();
+  spanTitle2.hide("slow");
+  spanTitle1.show("slow");
+  ilustracionCotizaciones.hide();
+  ilustracion.show("slow");
   formatCotizaciones.hide();
-  checkList.show('slow');
-  formatAutorizaciones.show('slow');
+  checkList.show("slow");
+  formatAutorizaciones.show("slow");
   // formatCotizaciones.css("display", "none");
   // formatAutorizaciones.css("display", "block");
 });
 
 btnCotizaciones.click(() => {
   //console.log("cotizaciones");
-  btnCotizaciones.hide()
-  btnAutorizaciones.show()
-  spanTitle1.hide('slow')
-  spanTitle2.show('slow')
-  ilustracion[0].src = "./img/ilustracionCotizaciones.svg";
+  btnCotizaciones.hide();
+  btnAutorizaciones.show();
+  spanTitle1.hide("slow");
+  spanTitle2.show("slow");
+  ilustracion.hide();
+  ilustracionCotizaciones.show("slow");
   formatAutorizaciones.hide();
-  checkList.hide('slow');
-  formatCotizaciones.show('slow');
+  checkList.hide("slow");
+  formatCotizaciones.show("slow");
   // formatAutorizaciones.css("display", "none");
   // formatCotizaciones.css("display", "block");
 });
