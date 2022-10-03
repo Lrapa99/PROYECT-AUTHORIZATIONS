@@ -100,12 +100,14 @@ $(document).ready(() => {
   //consultar documento al presionar enter dentro del input de texto
   $("#documento").on("keyup", (e) => {
     $("#estado").html(""); //quitamos icono de estado
-    let keyCode = e.keyCode || e.which;
+    //let keyCode = e.keyCode || e.which;
     const spinner = `<div class="spinner-border text-warning" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>`;
 
-    if (keyCode == 13 && $("#documento").val() !== "") {
+    let largo = $("#documento").val().length;
+
+    if (largo > 6) {
       $("#nombres").val("");
       $("#estado").html(spinner);
       m = $("#documento").val().split(" ");
@@ -114,6 +116,16 @@ $(document).ready(() => {
         consulta(doc, 1);
       }
     }
+
+    // if (keyCode == 13 && $("#documento").val() !== "") {
+    //   $("#nombres").val("");
+    //   $("#estado").html(spinner);
+    //   m = $("#documento").val().split(" ");
+
+    //   for (let doc of m) {
+    //     consulta(doc, 1);
+    //   }
+    // }
   });
 });
 
@@ -196,12 +208,26 @@ const getNameDocument = () => {
 //console.log(getNameDocument());
 
 //funcion para mostrar y ocultar alertas
-function getAlerts(cod, timeFadeOut = 4000) {
+function getAlerts(cod, timeFadeOut = 1000) {
   $("#alerts").fadeIn(100, function () {
     $(this).html(cod);
   });
+  $("#documento").on("keyup", (e) => {
+    $("#alerts").fadeOut(timeFadeOut, function () {
+      $(this).html("");
+    });
+  });
+}
 
-  $("#alerts").fadeOut(timeFadeOut, function () {
+function removeAlertsBtnGenerate() {
+  if ($("#servicios1").val() !== "") {
+    $("#alerts").fadeOut(1000, function () {
+      $(this).html("");
+    });
+  }
+}
+function removeAlertsBtnClear() {
+  $("#alerts").fadeOut(1000, function () {
     $(this).html("");
   });
 }
@@ -252,6 +278,8 @@ btnPrint.click(() => {
         inputDocumento.value !== "" &&
         inputServicios1.value !== ""
       ) {
+        removeAlertsBtnGenerate();
+
         showModal(
           "Desea guardar los datos e imprimir?",
           "./img/save.svg",
@@ -267,6 +295,7 @@ btnPrint.click(() => {
         Para continuar , debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios!</div>`;
 
         getAlerts(alertNoPrint);
+
         // alert(
         //   "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
         // );
@@ -347,6 +376,7 @@ btnClear.click(() => {
     inputServicios3.value ||
     inputCopago.value !== ""
   ) {
+    removeAlertsBtnClear();
     showModal(
       "Se limpiaran todos los datos, desea continuar?",
       "./img/clear.svg",
