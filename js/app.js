@@ -501,7 +501,7 @@ btnAutorizaciones.click(() => {
   ilustracion.show("slow");
   formatCotizaciones.hide();
   checkList.show("slow");
-  formatAutorizaciones.show("slow");
+  formatAutorizaciones.show();
   // formatCotizaciones.css("display", "none");
   // formatAutorizaciones.css("display", "block");
 });
@@ -516,7 +516,7 @@ btnCotizaciones.click(() => {
   ilustracionCotizaciones.show("slow");
   formatAutorizaciones.hide();
   checkList.hide("slow");
-  formatCotizaciones.show("slow");
+  formatCotizaciones.show();
   // formatAutorizaciones.css("display", "none");
   // formatCotizaciones.css("display", "block");
 });
