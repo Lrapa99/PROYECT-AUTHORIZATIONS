@@ -23,6 +23,14 @@ body {
   color: $letra-orange;
 }
 
+.modal-body {
+  text-align: center;
+  #img-modal {
+    width: 50%;
+    height: 50%;
+  }
+}
+
 .padre {
   display: flex;
   flex-direction: column;

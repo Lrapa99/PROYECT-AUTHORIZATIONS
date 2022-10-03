@@ -209,7 +209,7 @@ function getAlerts(cod, timeFadeOut = 4000) {
 //funcion para mostrar modal de confirmacion
 function showModal(
   showText = "ingrese el texto a mostrar",
-  srcImg = "ingrese src de animations",
+  srcImg = "ingrese src de img",
   hiddenButton,
   showButton
 ) {
@@ -254,7 +254,7 @@ btnPrint.click(() => {
       ) {
         showModal(
           "Desea guardar los datos e imprimir?",
-          "./img/gitSaveDatos.gif",
+          "./img/save.svg",
           "modalAceptClear",
           "modalAceptPrint"
         );
@@ -349,7 +349,7 @@ btnClear.click(() => {
   ) {
     showModal(
       "Se limpiaran todos los datos, desea continuar?",
-      "./img/clear.gif",
+      "./img/clear.svg",
       "modalAceptPrint",
       "modalAceptClear"
     );

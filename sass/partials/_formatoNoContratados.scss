@@ -39,6 +39,8 @@ $color-linea: #abb2b9;
       color: $letra-black;
       position: relative;
       width: 100%;
+      margin-top: 15px;
+      margin-bottom: 20px;
       .img__superSalud {
         position: relative;
         text-align: end;
@@ -63,7 +65,7 @@ $color-linea: #abb2b9;
         width: 100%;
         height: 100%;
         font-weight: 500;
-        font-size: 11px;
+        font-size: 8px;
         border: 2px solid $letra-black;
         position: relative;
 
@@ -115,7 +117,7 @@ $color-linea: #abb2b9;
               .infoInputs__data {
                 width: 25%;
                 text-align: start;
-                font-size: 10px;
+                font-size: 8px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -124,7 +126,7 @@ $color-linea: #abb2b9;
                 text-align: start;
                 width: 75%;
                 input {
-                  font-size: 10px;
+                  font-size: 8px;
                 }
               }
             }
@@ -162,7 +164,7 @@ $color-linea: #abb2b9;
                 width: 100%;
 
                 input {
-                  font-size: 10px;
+                  font-size: 8px;
                 }
               }
 
@@ -198,7 +200,7 @@ $color-linea: #abb2b9;
               flex-direction: column;
               border-bottom: 2px solid $color-linea;
               img {
-                width: 100px;
+                width: 90px;
               }
             }
             .parte6__infoFooter {
@@ -315,6 +317,28 @@ $color-linea: #abb2b9;
           .content__parte2 {
             text-align: start;
           }
+          .content__parte3 {
+            .content__parte3__tableInfoPaciente {
+              .tableInfoPaciente__infoInputs {
+                .infoInputs__insertData {
+                  input {
+                    font-size: 10px;
+                  }
+                }
+              }
+            }
+          }
+          .content__parte4 {
+            .content__parte4__tableDescriptions {
+              .tableDescriptions__content {
+                .tableDescriptions__content__desc {
+                  input {
+                    font-size: 10px;
+                  }
+                }
+              }
+            }
+          }
           .content__parte6 {
             .content__parte6__desc {
               height: 250px;
@@ -322,6 +346,7 @@ $color-linea: #abb2b9;
           }
           .tableDescriptions__content__encabezado {
             text-align: center;
+
             .enca_cod {
               width: 15%;
             }

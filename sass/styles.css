@@ -17,7 +17,7 @@
     margin-top: 40px;
   }
   .all-content .left .formato {
-    font-size: 10px;
+    font-size: 8px;
   }
   .all-content .left .formato .formato__bloque1 .bloque1__parte1 img {
     width: 100px;
@@ -28,6 +28,7 @@
   .all-content .left .formato .formato__bloque2 .bloque2__parte1 {
     width: 150px;
     height: 80%;
+    justify-content: space-between;
   }
   .all-content .left .formato .formato__bloque2 .bloque2__parte2 {
     width: 80%;
@@ -36,7 +37,7 @@
     text-align: center;
   }
   .all-content .left .formato .formato__bloque2 .bloque2__parte2 #title__remitente {
-    font-size: 13px;
+    font-size: 8px;
   }
   .all-content .left .formato .formato__bloque2 .bloque2__parte3 {
     height: 80%;
@@ -49,7 +50,7 @@
     padding-left: 3px;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 input {
-    font-size: 10px;
+    font-size: 8px;
   }
   .all-content .left .formato .formato__bloque3 .bloque3__parte2 #nombres {
     width: 90%;
@@ -62,14 +63,17 @@
     width: 100%;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte1 input {
-    font-size: 10px;
+    font-size: 8px;
+  }
+  .all-content .left .formato .formato__bloque4 .bloque4__parte2 .bloque4__parte2__img-resultado img {
+    width: 100px;
   }
   .all-content .left .formato .formato__bloque4 .bloque4__parte3 .bloque4__parte3__firma img {
     width: 100px;
   }
   .all-content .right {
-    font-size: 15px;
-    margin-top: 30px;
+    font-size: 12px;
+    margin-top: 50px;
   }
   .all-content .right .ilustracion {
     display: none;
@@ -339,6 +343,8 @@
   color: #212f3d;
   position: relative;
   width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 .padre .all-content .left__formatoNoContratados .img__superSalud {
   position: relative;
@@ -364,7 +370,7 @@
   width: 100%;
   height: 100%;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 8px;
   border: 2px solid #212f3d;
   position: relative;
 }
@@ -412,7 +418,7 @@
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__data {
   width: 25%;
   text-align: start;
-  font-size: 10px;
+  font-size: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -422,7 +428,7 @@
   width: 75%;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData input {
-  font-size: 10px;
+  font-size: 8px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 {
   width: 90%;
@@ -452,7 +458,7 @@
   width: 100%;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__desc input {
-  font-size: 10px;
+  font-size: 8px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__valorTotal {
   font-weight: 700;
@@ -482,7 +488,7 @@
   border-bottom: 2px solid #abb2b9;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__firmas img {
-  width: 100px;
+  width: 90px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__infoFooter {
   display: flex;
@@ -570,6 +576,12 @@
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 {
     text-align: start;
   }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData input {
+    font-size: 10px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__desc input {
+    font-size: 10px;
+  }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc {
     height: 250px;
   }
@@ -648,6 +660,14 @@ body {
   background-color: #f8f9f9;
   font-family: "Roboto", sans-serif;
   color: #dc7633;
+}
+
+.modal-body {
+  text-align: center;
+}
+.modal-body #img-modal {
+  width: 50%;
+  height: 50%;
 }
 
 .padre {
