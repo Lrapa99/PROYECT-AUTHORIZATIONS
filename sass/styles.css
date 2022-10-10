@@ -430,6 +430,9 @@
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData input {
   font-size: 8px;
 }
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData .insertData__ident {
+  display: flex;
+}
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 {
   width: 90%;
 }
@@ -625,6 +628,12 @@
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 {
     text-align: start;
   }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData input {
+    font-size: 12px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__desc input {
+    font-size: 12px;
+  }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc {
     height: 250px;
   }
@@ -678,6 +687,7 @@ body {
 }
 .padre #alerts {
   position: absolute;
+  z-index: 10;
 }
 .padre .all-content {
   display: flex;

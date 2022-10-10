@@ -1,0 +1,165 @@
+@media print {
+  $body-font: "Roboto", sans-serif;
+  $main-color: #f8f9f9;
+  $letra-black: #212f3d;
+  $color-orange: #edbb99;
+  $right-color: #d5dbdb;
+  $left-color: #aed6f1;
+  $color-maxilodent: #1a939e;
+  $color-radiologia: #e67e22;
+  $color-castulo: #16a085;
+  $color-coosalud: #75b948;
+  $color-ilustracion: #f9a826;
+  $color-linea: #abb2b9;
+  $color-linea: #abb2b9;
+  @page {
+    margin: 0;
+    size: auto;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  .padre {
+    .all-content {
+      .left__formatoNoContratados {
+        &::before {
+          opacity: 1;
+        }
+        .left__formatoNoContratados__content {
+          font-size: 12px;
+
+          .content__parte1 {
+            opacity: 0.5;
+          }
+
+          .content__parte2 {
+            text-align: start;
+            margin-top: 10px;
+          }
+
+          .content__parte3 {
+            .content__parte3__tableInfoPaciente {
+              .tableInfoPaciente__infoInputs {
+                input {
+                  border: none;
+                }
+                .infoInputs__data {
+                  font-size: 12px;
+                }
+                .infoInputs__insertData {
+                  text-align: start;
+                  width: 75%;
+                  input {
+                    font-size: 10px;
+                  }
+
+                  .insertData__ident {
+                    display: flex;
+                  }
+                }
+              }
+            }
+          }
+
+          .content__parte4 {
+            input {
+              border: none;
+            }
+
+            .content__parte4__tableDescriptions {
+              .tableDescriptions__content {
+                height: 100px;
+                .tableDescriptions__content__encabezado {
+                  background-color: $color-orange;
+                  text-align: center;
+                  .enca_cod {
+                    width: 15%;
+                  }
+
+                  .enca_desc {
+                    width: 80%;
+                  }
+
+                  .enca_cant {
+                    width: 10%;
+                  }
+
+                  .enca_valor {
+                    width: 15%;
+                  }
+                }
+                #cod_cums {
+                  width: 15%;
+                }
+                #descriptions {
+                  width: 80%;
+                }
+                #cant {
+                  width: 8%;
+                }
+                #class_valor {
+                  width:13%;
+                }
+
+                .tableDescriptions__content__desc {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  //background-color: $left-color;
+                  width: 100%;
+
+                  input {
+                    font-size: 8px;
+                  }
+                }
+
+                .tableDescriptions__valorTotal {
+                  font-weight: 700;
+                  display: flex;
+                  justify-content: space-between;
+                  border-bottom: 2px solid $color-linea;
+                }
+              }
+            }
+          }
+
+          .content__parte5 {
+            //background-color: $left-color;
+            width: 90%;
+            font-weight: 700;
+            margin-top: 20px;
+            border-bottom: 2px solid $color-linea;
+          }
+
+          .content__parte6 {
+            //background-color: $left-color;
+            width: 90%;
+            .content__parte6__desc {
+              display: flex;
+              flex-direction: column;
+              height: 200px;
+              justify-content: space-around;
+              .parte6__firmas {
+                font-weight: 700;
+                display: flex;
+                flex-direction: column;
+                border-bottom: 2px solid $color-linea;
+                img {
+                  width: 90px;
+                  margin-bottom: 5px;
+                }
+              }
+              .parte6__infoFooter {
+                display: flex;
+                flex-direction: column;
+                color: grey;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

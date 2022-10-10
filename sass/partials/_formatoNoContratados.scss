@@ -68,6 +68,7 @@ $color-linea: #abb2b9;
         font-size: 8px;
         border: 2px solid $letra-black;
         position: relative;
+        
 
         .content__parte1 {
           opacity: 0.7;
@@ -127,6 +128,10 @@ $color-linea: #abb2b9;
                 width: 75%;
                 input {
                   font-size: 8px;
+                }
+
+                .insertData__ident{
+                  display: flex;
                 }
               }
             }
@@ -393,6 +398,29 @@ $color-linea: #abb2b9;
           font-size: 13px;
           .content__parte2 {
             text-align: start;
+          }
+
+          .content__parte3 {
+            .content__parte3__tableInfoPaciente {
+              .tableInfoPaciente__infoInputs {
+                .infoInputs__insertData {
+                  input {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+          .content__parte4 {
+            .content__parte4__tableDescriptions {
+              .tableDescriptions__content {
+                .tableDescriptions__content__desc {
+                  input {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
           }
           .content__parte6 {
             .content__parte6__desc {

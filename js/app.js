@@ -13,89 +13,85 @@ $(document).ready(() => {
     7: "SC",
   }; //Add Otros TipDoc
 
-  function respuesta(response) {
-    //console.log(response);
+  const getDataResponse = (response, nameID, estadoId) => {
+    function respuesta(response) {
+      //console.log(response);
 
-    const segundoApellido =
-      response.segundo_apellido == null ? "" : response.segundo_apellido;
-    const segundoNombre =
-      response.segundo_nombre == null ? "" : response.segundo_nombre;
+      const segundoApellido =
+        response.segundo_apellido == null ? "" : response.segundo_apellido;
+      const segundoNombre =
+        response.segundo_nombre == null ? "" : response.segundo_nombre;
 
-    const primerNombre = response.primer_nombre;
-    const primerApellido = response.primer_apellido;
-    const nameComplet = `${primerNombre} ${segundoNombre} ${primerApellido} ${segundoApellido}`;
-    const estadoUs = response.estado == "AC" ? "ACTIVO" : "INACTIVO";
+      const primerNombre = response.primer_nombre;
+      const primerApellido = response.primer_apellido;
+      const nameComplet = `${primerNombre} ${segundoNombre} ${primerApellido} ${segundoApellido}`;
+      const estadoUs = response.estado == "AC" ? "ACTIVO" : "INACTIVO";
 
-    $("#nombres").val(nameComplet);
+      $(`#${nameID}`).val(nameComplet);
 
-    //console.log(estadoUs);
+      //console.log(estadoUs);
 
-    const iconActivo =
-      '<img src="./img/activo.png" alt="Estado Activo" title="Estado Activo"">';
-    const iconInactivo =
-      '<img src="./img/inactivo.png" alt="Estado Inactivo" title="Estado Inactivo">';
-    const showIconEstado = estadoUs == "ACTIVO" ? iconActivo : iconInactivo;
+      const iconActivo =
+        '<img src="./img/activo.png" alt="Estado Activo" title="Estado Activo"">';
+      const iconInactivo =
+        '<img src="./img/inactivo.png" alt="Estado Inactivo" title="Estado Inactivo">';
+      const showIconEstado = estadoUs == "ACTIVO" ? iconActivo : iconInactivo;
 
-    $("#estado").html(showIconEstado);
+      $(`#${estadoId}`).html(showIconEstado);
 
-    //console.log(nameComplet);5
-  }
+      //console.log(nameComplet);5
+    }
+    respuesta(response);
+  };
 
-  // //funcion para mostrar y ocultar alertas
-  // function getAlerts(cod) {
-  //   $("#alerts").fadeIn(100, function () {
-  //     $(this).html(cod);
-  //   });
+  const getDataConsulta = (doc, codtip, nameID, estadoId) => {
+    function consulta(doc, codtip, nameID, estadoId) {
+      const stt = new Object();
+      stt.url = `${baseUrl}${tipDocumentos[codtip]}/${doc}`;
+      stt.async = true;
+      stt.crossDomain = true;
+      stt.method = "GET";
 
-  //   $("#alerts").fadeOut(7000, function () {
-  //     $(this).html("");
-  //   });
-  // }
+      $.ajax(stt).done((r) => {
+        //console.log(r.codigo);
+        //r.codigo = 300
+        if (r.codigo == 100) {
+          if (codtip < 7) consulta(doc, codtip + 1, nameID, estadoId);
+          if (codtip == 7) {
+            const showIconNoFound =
+              '<img src="./img/noFound.png" alt="No encontrado" title="No encontrado"">';
 
-  function consulta(doc, codtip) {
-    const stt = new Object();
-    stt.url = `${baseUrl}${tipDocumentos[codtip]}/${doc}`;
-    stt.async = true;
-    stt.crossDomain = true;
-    stt.method = "GET";
+            $(`#${estadoId}`).html(showIconNoFound);
+            //return alert("No se encontraron datos");
 
-    $.ajax(stt).done((r) => {
-      //console.log(r.codigo);
-      //r.codigo = 300
-      if (r.codigo == 100) {
-        if (codtip < 7) consulta(doc, codtip + 1);
-        if (codtip == 7) {
-          const showIconNoFound =
-            '<img src="./img/noFound.png" alt="No encontrado" title="No encontrado"">';
-
-          $("#estado").html(showIconNoFound);
-          //return alert("No se encontraron datos");
-
-          const alertNoFound = `<div class="alert alert-warning" role="alert">
+            const alertNoFound = `<div class="alert alert-warning" role="alert">
           No se encontraron datos!</div>`;
 
-          getAlerts(alertNoFound);
+            getAlerts(alertNoFound);
+          }
         }
-      }
 
-      if (r.codigo == 300) {
-        const codigo300 = `<div class="alert alert-danger" role="alert">
+        if (r.codigo == 300) {
+          const codigo300 = `<div class="alert alert-danger" role="alert">
         No se pudo realizar la consulta, por favor intente mas tarde!</div>`;
 
-        getAlerts(codigo300);
-        // return alert(
-        //   "No se pudo realizar la consulta, por favor intenta mas tarde"
-        // );
-      }
+          getAlerts(codigo300);
+          // return alert(
+          //   "No se pudo realizar la consulta, por favor intenta mas tarde"
+          // );
+        }
 
-      if (r.codigo == 200) {
-        const dt = JSON.parse(r.jsonObject);
-        //console.log(dt);
-        respuesta(dt);
-        //console.log(dt);
-      }
-    });
-  }
+        if (r.codigo == 200) {
+          const dt = JSON.parse(r.jsonObject);
+          //console.log(dt);
+          getDataResponse(dt, nameID, estadoId);
+          //console.log(dt);
+        }
+      });
+    }
+
+    consulta(doc, codtip, nameID, estadoId);
+  };
 
   //consultar documento al presionar enter dentro del input de texto
   $("#documento").on("keyup", (e) => {
@@ -113,19 +109,29 @@ $(document).ready(() => {
       m = $("#documento").val().split(" ");
 
       for (let doc of m) {
-        consulta(doc, 1);
+        getDataConsulta(doc, 1, "nombres", "estado");
       }
     }
+  });
 
-    // if (keyCode == 13 && $("#documento").val() !== "") {
-    //   $("#nombres").val("");
-    //   $("#estado").html(spinner);
-    //   m = $("#documento").val().split(" ");
+  //consultar documento al presionar enter dentro del input de texto
+  $("#documentoNoContratados").on("keyup", (e) => {
+    $("#estadoNoContratados").html(""); //quitamos icono de estado
+    const spinner = `<div class="spinner-border text-warning" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>`;
 
-    //   for (let doc of m) {
-    //     consulta(doc, 1);
-    //   }
-    // }
+    let largo = $("#documentoNoContratados").val().length;
+
+    if (largo > 6) {
+      $("#nombresNoContratados").val("");
+      $("#estadoNoContratados").html(spinner);
+      m = $("#documentoNoContratados").val().split(" ");
+
+      for (let doc of m) {
+        getDataConsulta(doc, 1, "nombresNoContratados", "estadoNoContratados");
+      }
+    }
   });
 });
 
@@ -160,6 +166,13 @@ const inputServicios1 = $("#servicios1")[0];
 const inputServicios2 = $("#servicios2")[0];
 const inputServicios3 = $("#servicios3")[0];
 const inputCopago = $("#copago")[0];
+const inputNombresNoContratados = $("#nombresNoContratados")[0];
+const inputDocumentoNoContratados = $("#documentoNoContratados")[0];
+const inputCupsNoContratados = $("#cups")[0];
+const inputServiciosNoContratados = $("#servicio")[0];
+const inputCantidadNoContratados = $("#cantidad")[0];
+const inputValorNoContratados = $("#valor")[0];
+const inputValorTotalNoContratados = $("#valorTotal")[0];
 
 //ocultar parte derecha, para imprimir
 const right__hidden = $("#right")[0];
@@ -213,6 +226,11 @@ function getAlerts(cod, timeFadeOut = 1000) {
     $(this).html(cod);
   });
   $("#documento").on("keyup", (e) => {
+    $("#alerts").fadeOut(timeFadeOut, function () {
+      $(this).html("");
+    });
+  });
+  $("#documentoNoContratados").on("keyup", (e) => {
     $("#alerts").fadeOut(timeFadeOut, function () {
       $(this).html("");
     });
@@ -356,6 +374,7 @@ $("#modalAceptPrint").click(() => {
       document.title = "Authorizacions";
       right__hidden.className = "right";
       inputServicios2.placeholder = "Servicios";
+      inputServicios3.placeholder = "Servicios";
       $("#PrintBody").addClass("hiddenPrintBody");
     }, 200);
   }
@@ -374,7 +393,13 @@ btnClear.click(() => {
     inputServicios1.value !== "" ||
     inputServicios2.value !== "" ||
     inputServicios3.value ||
-    inputCopago.value !== ""
+    inputCopago.value !== "" ||
+    inputNombresNoContratados.value !== "" ||
+    inputDocumentoNoContratados.value !== "" ||
+    inputCupsNoContratados.value !== "" ||
+    inputServiciosNoContratados.value !== "" ||
+    inputCantidadNoContratados.value !== "" ||
+    inputValorNoContratados.value !== ""
   ) {
     removeAlertsBtnClear();
     showModal(
@@ -404,6 +429,13 @@ const valuesClear = {
   4: inputServicios2,
   5: inputServicios3,
   6: inputCopago,
+  7: inputNombresNoContratados,
+  8: inputDocumentoNoContratados,
+  9: inputCupsNoContratados,
+  10: inputServiciosNoContratados,
+  11: inputCantidadNoContratados,
+  12: inputValorNoContratados,
+  13: inputValorTotalNoContratados,
 };
 
 //funcion para limpiar solo los campos servicios
@@ -418,6 +450,7 @@ const clearServicies = (obj) => {
 //funcion para limpiar todos los campos
 const clearAll = (obj) => {
   $("#estado").html("");
+  $("#estadoNoContratados").html("");
   for (const valor in obj) {
     //console.log(obj[valor]);
     obj[valor].value = "";
@@ -523,6 +556,10 @@ const ilustracionCotizaciones = $("#img__ilustracion_cotizaciones");
 
 btnAutorizaciones.click(() => {
   //console.log("autorizaciones");
+  removeAlertsBtnClear();
+  clearAll(valuesClear);
+  btnPrint.attr("id", "btn__print");
+  $('#mediaPrint').attr('href','./sass/styles__print.css')
   btnAutorizaciones.hide();
   btnCotizaciones.show();
   spanTitle2.hide("slow");
@@ -538,6 +575,10 @@ btnAutorizaciones.click(() => {
 
 btnCotizaciones.click(() => {
   //console.log("cotizaciones");
+  removeAlertsBtnClear();
+  clearAll(valuesClear);
+  btnPrint.attr("id", "btnPrintNoContratados");
+  $('#mediaPrint').attr('href','./sass/styles__print__noContratados.css')
   btnCotizaciones.hide();
   btnAutorizaciones.show();
   spanTitle1.hide("slow");
@@ -549,4 +590,69 @@ btnCotizaciones.click(() => {
   formatCotizaciones.show();
   // formatAutorizaciones.css("display", "none");
   // formatCotizaciones.css("display", "block");
+  const btnPrintNoContratados = $("#btnPrintNoContratados");
+
+  btnPrintNoContratados.click(() => {
+    //console.log("imprimir");
+    if (window.print) {
+      try {
+        const iconEstado = $("#estadoNoContratados")[0].lastChild.title;
+
+        if (iconEstado == "Estado Inactivo") {
+          const alertInactivo = `<div class="alert alert-warning" role="alert">
+          No es posible continuar, el usuario se encuentra en estado "Inactivo" en Coosalud!</div>`;
+
+          return getAlerts(alertInactivo);
+
+          // return alert(
+          //   'No es posible continuar, el usuario se encuentra en estado "Inactivo" en Coosalud'
+          // );
+        }
+        if (iconEstado == "No encontrado") {
+          const alertNoEncontrado = `<div class="alert alert-danger" role="alert">
+          No es posible continuar, los datos del usuario no fueron encontrados!</div>`;
+
+          return getAlerts(alertNoEncontrado);
+          // return alert(
+          //   "No es posible continuar, los datos del usuario no fueron encontrados"
+          // );
+        }
+
+        if (
+          inputNombresNoContratados.value !== "" &&
+          inputDocumentoNoContratados.value !== "" &&
+          inputCupsNoContratados.value !== "" &&
+          inputServiciosNoContratados.value !== "" &&
+          inputCantidadNoContratados.value !== "" &&
+          inputValorNoContratados.value !== ""
+        ) {
+          $("#alerts").fadeOut(1000, function () {
+            $(this).html("");
+          });
+
+          showModal(
+            "Desea guardar los datos e imprimir?",
+            "./img/save.svg",
+            "modalAceptClear",
+            "modalAceptPrint"
+          );
+
+          //console.log($(".modalConfirm").prop("id"));
+
+          //console.log($("#exampleModal")[0]);
+        } else {
+          const alertNoPrint = `<div class="alert alert-warning" role="alert">
+          Para continuar, debe rellenar todos los campos!</div>`;
+
+          getAlerts(alertNoPrint);
+
+          // alert(
+          //   "Debe rellenar los campos: Nombres , Documento y al menos el primer campo de Servicios"
+          // );
+        }
+      } catch (error) {
+        //console.log(error);
+      }
+    }
+  });
 });
