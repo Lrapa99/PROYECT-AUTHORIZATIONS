@@ -209,7 +209,7 @@
                 </div>
                 <div class="content__parte2">
                     <div class="content__parte2__fecha">
-                        <span>Valledupar, 15 de septiembre 2022</span>
+                        <span>Valledupar,<span id="fechaNoContratados"></span></span>
                     </div>
                     <div class="content__parte2__coosalud">
                         <span>Señores</span>
@@ -261,23 +261,49 @@
                                 <div class="enca_valor"><span >VALOR</span></div>     
                             </div>
                             <div class="tableDescriptions__content__desc">
-                                <div id="cod_cums">
-                                    <input  type="text" class="form-control" list="datalistOptions" id="cups" placeholder="Cups">
-                                </div>
-                                <div id="descriptions">
-                                    <input  type="text" class="form-control" list="datalistOptions" id="servicio" placeholder="Servicio">
-                                
-                                
-                                </div>
-                                <div id="cant">
-                                    <input  type="text" class="form-control" list="datalistOptions" id="cantidad" placeholder="Cantidad"></div>
-                                <div id="class_valor">
-                                    <input  type="number" class="form-control" list="datalistOptions" id="valor" placeholder="Valor">
+                                <div class="inputCampos1">
+                                    <div id="cod_cums">
+                                        <input  type="text" class="form-control" list="datalistOptions__Cups" id="cups" placeholder="Cups">
+                                    </div>
+                                    <datalist id="datalistOptions__Cups">
+                                        <option value="883522">
+                                        <option value="883210">
+                                        <option value="883220">
+                                        <option value="883440">
+                                        <option value="883230">
+                                        <option value="883109">
+                                        <option value="883401">
+                                        <option value="20030187-10">
+                                        <option value="998702">
+                                        <option value="879205">
+                                        <option value="879122">
+                                        <option value="883103">
+                                        <option value="879520">
+                                        <option value="998702-1">
+                                        <option value="601101">
+                                        <option value="61100">
+                                        <option value="881112">
+                                    </datalist>
+                                    <div id="descriptions">
+                                        <input type="text" class="form-control" list="datalistOptions" id="servicio" placeholder="Servicio" readonly>
+                                    </div>
+                                    <div id="cant">
+                                        <input  type="text" class="form-control" list="datalistOptions__Cant" id="cantidad" placeholder="Cantidad">
+                                    </div>
+                                    <datalist id="datalistOptions__Cant">
+                                        <option value="1">
+                                        <option value="2">
+                                        <option value="3">
+                                        <option value="4">
+                                    </datalist>
+                                    <div id="class_valor">
+                                        <input  type="text" class="form-control" list="datalistOptions" id="valor" placeholder="$ Valor" readonly>
+                                    </div>
                                 </div>
                             </div>  
                             <div class="tableDescriptions__valorTotal">
                                 <div><span>VALOR TOTAL</span></div>
-                                <div><span id="valorTotal">$ 0</span></div>
+                                <div class="miValorTotal"><span id="valorTotal">$ 0</span></div>
                             </div> 
                         </div>
                     </div>

@@ -23,24 +23,53 @@
   }
   .padre {
     .all-content {
+      height: 90vh;
       .left__formatoNoContratados {
+        height: 83vh;
         &::before {
           opacity: 1;
+          background-size: 100%;
         }
         .left__formatoNoContratados__content {
           font-size: 12px;
 
           .content__parte1 {
-            opacity: 0.5;
+            opacity: 1;
+            width: 95%;
+            margin-top: 10px;
+            border: 1px solid $letra-black;
+            .content__parte1__logo {
+              border-right: 1px solid $letra-black;
+              width: 30%;
+              img {
+                width: 70%;
+              }
+            }
+            .content__parte1__cods {
+              text-align: start;
+              border-left: 1px solid $letra-black;
+              width: 30%;
+              padding-left: 5px;
+              .cods__1,
+              .cods__2 {
+                border-bottom: 1px solid $letra-black;
+              }
+            }
           }
 
           .content__parte2 {
             text-align: start;
-            margin-top: 10px;
+            height: 250px;
+
+            .content__parte2__coosalud {
+              display: flex;
+              flex-direction: column;
+            }
           }
 
           .content__parte3 {
             .content__parte3__tableInfoPaciente {
+              font-size: 13px;
               .tableInfoPaciente__infoInputs {
                 input {
                   border: none;
@@ -50,9 +79,9 @@
                 }
                 .infoInputs__insertData {
                   text-align: start;
-                  width: 75%;
+                  width: 50%;
                   input {
-                    font-size: 10px;
+                    font-size: 12px;
                   }
 
                   .insertData__ident {
@@ -70,10 +99,10 @@
 
             .content__parte4__tableDescriptions {
               .tableDescriptions__content {
-                height: 100px;
                 .tableDescriptions__content__encabezado {
                   background-color: $color-orange;
                   text-align: center;
+                  font-size: 13px;
                   .enca_cod {
                     width: 15%;
                   }
@@ -97,10 +126,10 @@
                   width: 80%;
                 }
                 #cant {
-                  width: 8%;
+                  width: 10%;
                 }
                 #class_valor {
-                  width:13%;
+                  width: 15%;
                 }
 
                 .tableDescriptions__content__desc {
@@ -111,7 +140,7 @@
                   width: 100%;
 
                   input {
-                    font-size: 8px;
+                    font-size: 12px;
                   }
                 }
 
@@ -119,7 +148,9 @@
                   font-weight: 700;
                   display: flex;
                   justify-content: space-between;
-                  border-bottom: 2px solid $color-linea;
+                  .miValorTotal {
+                    width: 66px;
+                  }
                 }
               }
             }
@@ -127,10 +158,10 @@
 
           .content__parte5 {
             //background-color: $left-color;
+            display: block;
             width: 90%;
             font-weight: 700;
             margin-top: 20px;
-            border-bottom: 2px solid $color-linea;
           }
 
           .content__parte6 {
@@ -139,22 +170,21 @@
             .content__parte6__desc {
               display: flex;
               flex-direction: column;
-              height: 200px;
+              height: 250px;
               justify-content: space-around;
               .parte6__firmas {
                 font-weight: 700;
                 display: flex;
                 flex-direction: column;
-                border-bottom: 2px solid $color-linea;
+
                 img {
                   width: 90px;
-                  margin-bottom: 5px;
                 }
               }
               .parte6__infoFooter {
                 display: flex;
                 flex-direction: column;
-                color: grey;
+                color: $letra-black;
               }
             }
           }

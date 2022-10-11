@@ -39,8 +39,6 @@ $color-linea: #abb2b9;
       color: $letra-black;
       position: relative;
       width: 100%;
-      margin-top: 15px;
-      margin-bottom: 20px;
       .img__superSalud {
         position: relative;
         text-align: end;
@@ -48,7 +46,7 @@ $color-linea: #abb2b9;
       &::before {
         content: "";
         background-image: url("/img/fondoLogo.jpg");
-        background-size: 70%;
+        background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
         position: absolute;
@@ -68,24 +66,38 @@ $color-linea: #abb2b9;
         font-size: 8px;
         border: 2px solid $letra-black;
         position: relative;
-        
 
         .content__parte1 {
-          opacity: 0.7;
+          opacity: 1;
           display: flex;
           justify-content: space-between;
           align-items: center;
           text-align: center;
-          width: 90%;
-          border-bottom: 2px solid $color-linea;
+          width: 95%;
+          margin-top: 10px;
+          border: 1px solid $letra-black;
+          //border-bottom: 2px solid $color-linea;
           //background-color: $left-color;
           .content__parte1__logo {
+            border-right: 1px solid $letra-black;
+            width: 30%;
             img {
-              width: 80%;
+              width: 70%;
             }
           }
           .content__parte1__title {
             font-weight: 700;
+          }
+
+          .content__parte1__cods {
+            text-align: start;
+            border-left: 1px solid $letra-black;
+            width: 30%;
+            padding-left: 5px;
+            .cods__1,
+            .cods__2 {
+              border-bottom: 1px solid $letra-black;
+            }
           }
         }
 
@@ -96,7 +108,7 @@ $color-linea: #abb2b9;
           justify-content: space-around;
           text-align: center;
           width: 90%;
-          border-bottom: 2px solid $color-linea;
+          //border-bottom: 2px solid $color-linea;
         }
 
         .content__parte3 {
@@ -105,32 +117,43 @@ $color-linea: #abb2b9;
           .content__parte3__tableInfoPaciente {
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
             text-align: center;
-            height: 150px;
+            margin-bottom: 20px;
+            border: 1px solid $letra-black;
             .tableInfoPaciente__title {
               background-color: $color-orange;
               font-weight: 700;
+              border-bottom: 1px solid $letra-black;
             }
             .tableInfoPaciente__infoInputs {
               display: flex;
               font-weight: 700;
+              justify-content: space-between;
               .infoInputs__data {
-                width: 25%;
+                width: 50%;
                 text-align: start;
-                font-size: 8px;
+                font-size: 10px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
+                padding-left: 5px;
+                border-right: 1px solid $letra-black;
+                .data__name {
+                  border-bottom: 1px solid $letra-black;
+                  padding-top: 8px;
+                }
               }
               .infoInputs__insertData {
                 text-align: start;
-                width: 75%;
+                width: 50%;
+
                 input {
                   font-size: 8px;
                 }
-
-                .insertData__ident{
+                .insertData__name {
+                  border-bottom: 1px solid $letra-black;
+                }
+                .insertData__ident {
                   display: flex;
                 }
               }
@@ -141,13 +164,15 @@ $color-linea: #abb2b9;
         .content__parte4 {
           // background-color: $left-color;
           width: 90%;
+          border: 1px solid $letra-black;
 
           //text-align: center;
           .content__parte4__tableDescriptions {
             display: flex;
             flex-direction: column;
+            height: 100%;
             .tableDescriptions__content {
-              height: 100px;
+              //height: 100px;
               display: flex;
               flex-direction: column;
               justify-content: space-between;
@@ -159,14 +184,48 @@ $color-linea: #abb2b9;
                 background-color: $color-orange;
                 font-weight: 700;
                 width: 100%;
+                height: 100%;
+                border-bottom: 1px solid $letra-black;
+                .enca_cod,
+                .enca_desc,
+                .enca_cant {
+                  border-right: 1px solid $letra-black;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+
               }
+              #cod_cums {
+                border-right: 1px solid $letra-black;
+              }
+              #descriptions {
+
+                border-right: 1px solid $letra-black;
+              }
+              #cant {
+
+                border-right: 1px solid $letra-black;
+              }
+              #valor{
+                text-align: center;
+              }
+           
+             
 
               .tableDescriptions__content__desc {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                height: 100%;
+
+                .inputCampos1{
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                }
+          
                 //background-color: $left-color;
                 width: 100%;
+                border-bottom: 1px solid $letra-black;
 
                 input {
                   font-size: 8px;
@@ -177,7 +236,14 @@ $color-linea: #abb2b9;
                 font-weight: 700;
                 display: flex;
                 justify-content: space-between;
-                border-bottom: 2px solid $color-linea;
+                padding: 0 10px 0 10px;
+                // border-bottom: 2px solid $color-linea;
+                .miValorTotal {
+                  width: 18.3%;
+                  height: 100%;
+                  text-align: center;
+                  border-left: 1px solid $letra-black;
+                }
               }
             }
           }
@@ -185,10 +251,11 @@ $color-linea: #abb2b9;
 
         .content__parte5 {
           //background-color: $left-color;
+          display: none;
           width: 90%;
           font-weight: 700;
           margin-top: 20px;
-          border-bottom: 2px solid $color-linea;
+          //border-bottom: 2px solid $color-linea;
         }
 
         .content__parte6 {
@@ -203,7 +270,7 @@ $color-linea: #abb2b9;
               font-weight: 700;
               display: flex;
               flex-direction: column;
-              border-bottom: 2px solid $color-linea;
+              //border-bottom: 2px solid $color-linea;
               img {
                 width: 90px;
               }

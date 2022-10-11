@@ -7,18 +7,52 @@
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
+  .padre .all-content {
+    height: 90vh;
+  }
+  .padre .all-content .left__formatoNoContratados {
+    height: 83vh;
+  }
   .padre .all-content .left__formatoNoContratados::before {
     opacity: 1;
+    background-size: 100%;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
     font-size: 12px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 {
-    opacity: 0.5;
+    opacity: 1;
+    width: 95%;
+    margin-top: 10px;
+    border: 1px solid #212f3d;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__logo {
+    border-right: 1px solid #212f3d;
+    width: 30%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__logo img {
+    width: 70%;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__cods {
+    text-align: start;
+    border-left: 1px solid #212f3d;
+    width: 30%;
+    padding-left: 5px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__cods .cods__1,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__cods .cods__2 {
+    border-bottom: 1px solid #212f3d;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 {
     text-align: start;
-    margin-top: 10px;
+    height: 250px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 .content__parte2__coosalud {
+    display: flex;
+    flex-direction: column;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente {
+    font-size: 13px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs input {
     border: none;
@@ -28,10 +62,10 @@
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData {
     text-align: start;
-    width: 75%;
+    width: 50%;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData input {
-    font-size: 10px;
+    font-size: 12px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData .insertData__ident {
     display: flex;
@@ -39,12 +73,10 @@
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 input {
     border: none;
   }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content {
-    height: 100px;
-  }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado {
     background-color: #edbb99;
     text-align: center;
+    font-size: 13px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado .enca_cod {
     width: 15%;
@@ -65,10 +97,10 @@
     width: 80%;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content #cant {
-    width: 8%;
+    width: 10%;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content #class_valor {
-    width: 13%;
+    width: 15%;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__desc {
     display: flex;
@@ -77,19 +109,21 @@
     width: 100%;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__desc input {
-    font-size: 8px;
+    font-size: 12px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__valorTotal {
     font-weight: 700;
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid #abb2b9;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__valorTotal .miValorTotal {
+    width: 66px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte5 {
+    display: block;
     width: 90%;
     font-weight: 700;
     margin-top: 20px;
-    border-bottom: 2px solid #abb2b9;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 {
     width: 90%;
@@ -97,22 +131,20 @@
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc {
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 250px;
     justify-content: space-around;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__firmas {
     font-weight: 700;
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid #abb2b9;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__firmas img {
     width: 90px;
-    margin-bottom: 5px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__infoFooter {
     display: flex;
     flex-direction: column;
-    color: grey;
+    color: #212f3d;
   }
 }/*# sourceMappingURL=styles__print__noContratados.css.map */
