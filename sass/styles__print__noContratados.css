@@ -70,6 +70,9 @@
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData .insertData__ident {
     display: flex;
   }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content {
+    display: none;
+  }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 input {
     border: none;
   }

@@ -161,6 +161,27 @@ $color-linea: #abb2b9;
           }
         }
 
+        .selectServis__content {
+          display: flex;
+          align-items: center;
+          width: 90%;
+
+          .selectServis__input {
+            width: 95%;
+            input{
+              font-size: 11px;
+            };
+          }
+
+          #addServis {
+            font-size: 20px;
+            cursor: pointer;
+            &:hover {
+              font-size: 25px;
+            }
+          }
+        }
+
         .content__parte4 {
           // background-color: $left-color;
           width: 90%;
@@ -195,34 +216,29 @@ $color-linea: #abb2b9;
                   justify-content: center;
                   align-items: center;
                 }
-
               }
               #cod_cums {
                 border-right: 1px solid $letra-black;
               }
               #descriptions {
-
                 border-right: 1px solid $letra-black;
               }
               #cant {
-
                 border-right: 1px solid $letra-black;
               }
-              #valor{
+              #valor {
                 text-align: center;
               }
-           
-             
 
               .tableDescriptions__content__desc {
                 height: 100%;
 
-                .inputCampos1{
+                .inputCampos1 {
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
                 }
-          
+
                 //background-color: $left-color;
                 width: 100%;
                 border-bottom: 1px solid $letra-black;

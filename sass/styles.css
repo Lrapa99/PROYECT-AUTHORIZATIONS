@@ -456,6 +456,24 @@
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData .insertData__ident {
   display: flex;
 }
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content {
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content .selectServis__input {
+  width: 95%;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content .selectServis__input input {
+  font-size: 11px;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content #addServis {
+  font-size: 20px;
+  cursor: pointer;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content #addServis:hover {
+  font-size: 25px;
+}
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 {
   width: 90%;
   border: 1px solid #212f3d;
