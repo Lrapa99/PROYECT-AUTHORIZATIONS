@@ -48,9 +48,9 @@ $(document).ready(() => {
   };
 
   function clearInputs() {
-    $("#cups").val('');
-    $("#servicio").val("");
-    $("#valor").val("");
+    $("#cups").text('');
+    $("#servicio").text("");
+    $("#valor").text("");
     $("#cantidad").val("");
     $("#valorTotal").text("$ 0");
   }
@@ -72,9 +72,10 @@ $(document).ready(() => {
             let newValorServicio = new Intl.NumberFormat("es-419").format(
               valor
             );
-            $("#cups").val(val);
-            $("#servicio").val(servicio);
-            $("#valor").val(`$ ${newValorServicio}`);
+            $("#cups").text(val);
+            $("#servicio").text(servicio);
+            $("#valor").text(`$ ${newValorServicio}`);
+            $('#selectCant').val(1)
             $("#cantidad").val(1);
 
             $("#valorTotal").text(`$ ${newValorServicio}`);
@@ -94,13 +95,12 @@ $(document).ready(() => {
         for (let val in objServiciosNoContratados) {
           //console.log(val);
 
-          if ($("#cups").val() == val) {
+          if ($("#cups").text() == val) {
             let valor = objServiciosNoContratados[val][1];
-
             let newValorServicio = new Intl.NumberFormat("es-419").format(
               valor * $("#cantidad").val()
             );
-            $("#valor").val(`$ ${newValorServicio}`);
+            $("#valor").text(`$ ${newValorServicio}`);
 
             $("#valorTotal").text(`$ ${newValorServicio}`);
           }
@@ -112,8 +112,8 @@ $(document).ready(() => {
 
   const getValuesServis = () => {
     for (let servis in objServiciosNoContratados) {
-      $("#datalistOptions__Servicios").append(
-        `<option value='${objServiciosNoContratados[servis][0]}'>`
+      $("#selectServis").append(
+        `<option>${objServiciosNoContratados[servis][0]}</option>`
       );
     }
   };

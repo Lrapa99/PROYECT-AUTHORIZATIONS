@@ -168,11 +168,11 @@ const inputServicios3 = $("#servicios3")[0];
 const inputCopago = $("#copago")[0];
 const inputNombresNoContratados = $("#nombresNoContratados")[0];
 const inputDocumentoNoContratados = $("#documentoNoContratados")[0];
-const inputCupsNoContratados = $("#cups")[0];
-const inputServiciosNoContratados = $("#servicio")[0];
-const inputCantidadNoContratados = $("#cantidad")[0];
-const inputValorNoContratados = $("#valor")[0];
-const inputValorTotalNoContratados = $("#valorTotal")[0];
+const inputCupsNoContratados = $("#cups");
+const inputServiciosNoContratados = $("#servicio");
+const inputCantidadNoContratados = $("#cantidad");
+const inputValorNoContratados = $("#valor");
+const inputValorTotalNoContratados = $("#valorTotal");
 
 //ocultar parte derecha, para imprimir
 const right__hidden = $("#right")[0];
@@ -397,10 +397,10 @@ btnClear.click(() => {
     inputCopago.value !== "" ||
     inputNombresNoContratados.value !== "" ||
     inputDocumentoNoContratados.value !== "" ||
-    inputCupsNoContratados.value !== "" ||
-    inputServiciosNoContratados.value !== "" ||
-    inputCantidadNoContratados.value !== "" ||
-    inputValorNoContratados.value !== ""
+    inputCupsNoContratados.text !== "" ||
+    inputServiciosNoContratados.text !== "" ||
+    inputCantidadNoContratados.text !== "" ||
+    inputValorNoContratados.text !== ""
   ) {
     removeAlertsBtnClear();
     showModal(
@@ -432,11 +432,6 @@ const valuesClear = {
   6: inputCopago,
   7: inputNombresNoContratados,
   8: inputDocumentoNoContratados,
-  9: inputCupsNoContratados,
-  10: inputServiciosNoContratados,
-  11: inputCantidadNoContratados,
-  12: inputValorNoContratados,
-  13: inputValorTotalNoContratados,
 };
 
 //funcion para limpiar solo los campos servicios
@@ -455,8 +450,13 @@ const clearAll = (obj) => {
   for (const valor in obj) {
     //console.log(obj[valor]);
     obj[valor].value = "";
+
+    inputCupsNoContratados.text("");
+    inputServiciosNoContratados.text("");
+    inputCantidadNoContratados.val("");
+    inputValorNoContratados.text("");
     $("#valorTotal").text("$ 0");
-    $("#selectServis").val("");
+    $("#selectServis").val("Seleccionar Servicio");
   }
 };
 
