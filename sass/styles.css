@@ -399,8 +399,12 @@
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__cods {
   text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-left: 1px solid #212f3d;
   width: 30%;
+  height: 100%;
   padding-left: 5px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte1 .content__parte1__cods .cods__1,
@@ -453,7 +457,7 @@
   width: 50%;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData input {
-  font-size: 8px;
+  font-size: 10px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData .insertData__name {
   border-bottom: 1px solid #212f3d;
@@ -463,9 +467,7 @@
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .tableDescriptions__content__desc {
   text-align: center;
-}
-.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .inputCampos1 {
-  border-bottom: 1px solid #212f3d;
+  font-size: 9px;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content {
   display: flex;
@@ -483,7 +485,7 @@
   cursor: pointer;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content #addServis:hover {
-  font-size: 25px;
+  color: #1ABC9C;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 {
   width: 90%;
@@ -541,17 +543,51 @@
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc {
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid #212f3d;
 }
 .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc input {
-  font-size: 8px;
+  font-size: 9px;
 }
-.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 {
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc #inputCampos2,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc #inputCampos3,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc #inputCampos4 {
+  display: none;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .deleteServis,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .deleteServis2,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .deleteServis3,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .deleteServis4 {
+  display: none;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #212f3d;
 }
-.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-cod_cums {
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1:hover #deleteServis2,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1:hover #deleteServis3,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1:hover #deleteServis4,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2:hover #deleteServis2,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2:hover #deleteServis3,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2:hover #deleteServis4,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3:hover #deleteServis2,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3:hover #deleteServis3,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3:hover #deleteServis4,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4:hover #deleteServis2,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4:hover #deleteServis3,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4:hover #deleteServis4 {
+  display: block;
+  font-size: 15px;
+  cursor: pointer;
+  color: #F44336;
+}
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-cod_cums,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2 .content-cod_cums,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3 .content-cod_cums,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4 .content-cod_cums {
   height: 40px;
   width: 90px;
   border-right: 1px solid #212f3d;
@@ -559,7 +595,10 @@
   justify-content: center;
   align-items: center;
 }
-.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-descriptions {
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-descriptions,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2 .content-descriptions,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3 .content-descriptions,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4 .content-descriptions {
   height: 40px;
   width: 400px;
   border-right: 1px solid #212f3d;
@@ -567,7 +606,10 @@
   justify-content: center;
   align-items: center;
 }
-.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-cant {
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-cant,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2 .content-cant,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3 .content-cant,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4 .content-cant {
   height: 40px;
   width: 90px;
   border-right: 1px solid #212f3d;
@@ -575,10 +617,12 @@
   justify-content: center;
   align-items: center;
 }
-.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-valor {
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos1 .content-valor,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos2 .content-valor,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos3 .content-valor,
+.padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content__desc .inputCampos4 .content-valor {
   height: 40px;
   width: 90px;
-  border-right: 1px solid #212f3d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -633,9 +677,32 @@
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 670px) and (max-width: 770px) {
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 10px;
+  }
+}
 /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 770px) and (max-width: 1070px) {
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 11px;
+  }
+}
 /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1070px) and (max-width: 1600px) {
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 11px;
+  }
+}
 /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1600px) and (max-width: 2000px) {
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content {
+    font-size: 13px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .selectServis__content .selectServis__input #selectServis {
+    font-size: 10px;
+  }
+}
 body {
   background-color: #f8f9f9;
   font-family: "Roboto", sans-serif;

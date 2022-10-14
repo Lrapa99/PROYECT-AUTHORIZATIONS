@@ -95,8 +95,12 @@ $color-linea: #abb2b9;
 
           .content__parte1__cods {
             text-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             border-left: 1px solid $letra-black;
             width: 30%;
+            height: 100%;
             padding-left: 5px;
             .cods__1,
             .cods__2 {
@@ -152,7 +156,7 @@ $color-linea: #abb2b9;
                 width: 50%;
 
                 input {
-                  font-size: 8px;
+                  font-size: 10px;
                 }
                 .insertData__name {
                   border-bottom: 1px solid $letra-black;
@@ -167,10 +171,7 @@ $color-linea: #abb2b9;
 
         .tableDescriptions__content__desc {
           text-align: center;
-        }
-
-        .inputCampos1 {
-          border-bottom: 1px solid $letra-black;
+          font-size: 9px;
         }
 
         .selectServis__content {
@@ -189,7 +190,7 @@ $color-linea: #abb2b9;
             font-size: 20px;
             cursor: pointer;
             &:hover {
-              font-size: 25px;
+              color: #1ABC9C;
             }
           }
         }
@@ -258,16 +259,44 @@ $color-linea: #abb2b9;
               //background-color: $left-color;
               width: 100%;
               height: 100%;
-              border-bottom: 1px solid $letra-black;
+              //border-bottom: 1px solid $letra-black;
 
               input {
-                font-size: 8px;
+                font-size: 9px;
               }
 
-              .inputCampos1 {
+              #inputCampos2,
+              #inputCampos3,
+              #inputCampos4 {
+                display: none;
+              }
+
+              .deleteServis,
+              .deleteServis2,
+              .deleteServis3,
+              .deleteServis4 {
+                display: none;
+              }
+
+              .inputCampos1,
+              .inputCampos2,
+              .inputCampos3,
+              .inputCampos4 {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                border-bottom: 1px solid $letra-black;
+
+                &:hover {
+                  #deleteServis2,
+                  #deleteServis3,
+                  #deleteServis4 {
+                    display: block;
+                    font-size: 15px;
+                    cursor: pointer;
+                    color: #F44336;
+                  }
+                }
 
                 .content-cod_cums {
                   height: 40px;
@@ -296,7 +325,7 @@ $color-linea: #abb2b9;
                 .content-valor {
                   height: 40px;
                   width: 90px;
-                  border-right: 1px solid $letra-black;
+                  //border-right: 1px solid $letra-black;
                   display: flex;
                   justify-content: center;
                   align-items: center;
@@ -369,16 +398,60 @@ $color-linea: #abb2b9;
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 670px) and (max-width: 770px) {
+  .padre {
+    .all-content {
+      .left__formatoNoContratados {
+        .left__formatoNoContratados__content {
+          font-size: 10px;
+        }
+      }
+    }
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 770px) and (max-width: 1070px) {
+  .padre {
+    .all-content {
+      .left__formatoNoContratados {
+        .left__formatoNoContratados__content {
+          font-size: 11px;
+        }
+      }
+    }
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1070px) and (max-width: 1600px) {
+  .padre {
+    .all-content {
+      .left__formatoNoContratados {
+        .left__formatoNoContratados__content {
+          font-size: 11px;
+        }
+      }
+    }
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 1600px) and (max-width: 2000px) {
+  .padre {
+    .all-content {
+      .left__formatoNoContratados {
+        .left__formatoNoContratados__content {
+          font-size: 13px;
+
+          .selectServis__content {
+            .selectServis__input {
+              #selectServis {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

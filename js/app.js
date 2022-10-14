@@ -443,6 +443,18 @@ const clearServicies = (obj) => {
   }
 };
 
+function clearCampos() {
+  for (let i = 2; i < 5; i++) {
+    $(`#cups${i}`).text("");
+    $(`#servicio${i}`).text("");
+    $(`#valor${i}`).text("");
+    $(`#cantidad${i}`).val("");
+    $(`.inputCampos${i}`).attr("id", `inputCampos${i}`);
+  }
+  $("#valorTotal").text("$ 0");
+  $("#selectServis").val("Seleccionar Servicio");
+}
+
 //funcion para limpiar todos los campos
 const clearAll = (obj) => {
   $("#estado").html("");
@@ -450,14 +462,12 @@ const clearAll = (obj) => {
   for (const valor in obj) {
     //console.log(obj[valor]);
     obj[valor].value = "";
-
-    inputCupsNoContratados.text("");
-    inputServiciosNoContratados.text("");
-    inputCantidadNoContratados.val("");
-    inputValorNoContratados.text("");
-    $("#valorTotal").text("$ 0");
-    $("#selectServis").val("Seleccionar Servicio");
   }
+  inputCupsNoContratados.text("");
+  inputServiciosNoContratados.text("");
+  inputCantidadNoContratados.val("");
+  inputValorNoContratados.text("");
+  clearCampos();
 };
 
 checkRadiologia.click(() => {

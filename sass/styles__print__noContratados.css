@@ -75,52 +75,7 @@
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 input {
     border: none;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado {
-    background-color: #edbb99;
-    text-align: center;
-    font-size: 13px;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado .enca_cod {
-    width: 15%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado .enca_desc {
-    width: 80%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado .enca_cant {
-    width: 10%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__encabezado .enca_valor {
-    width: 15%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content #cod_cums {
-    width: 15%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content #descriptions {
-    width: 80%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content #cant {
-    width: 10%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content #class_valor {
-    width: 15%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__desc {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__content__desc input {
-    font-size: 12px;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__valorTotal {
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-  }
-  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte4 .content__parte4__tableDescriptions .tableDescriptions__content .tableDescriptions__valorTotal .miValorTotal {
-    width: 66px;
+    width: 40px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte5 {
     display: block;

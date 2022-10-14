@@ -48,7 +48,7 @@ $(document).ready(() => {
   };
 
   function clearInputs() {
-    $("#cups").text('');
+    $("#cups").text("");
     $("#servicio").text("");
     $("#valor").text("");
     $("#cantidad").val("");
@@ -61,25 +61,64 @@ $(document).ready(() => {
       if ($("#selectServis").val() !== inicial) {
         //alert("El campo ha cambiado");
         //console.log($("#cups").val());
-        clearInputs();
+        //clearInputs();
         for (let val in objServiciosNoContratados) {
           //console.log(val);
 
           if ($("#selectServis").val() == objServiciosNoContratados[val][0]) {
             let servicio = objServiciosNoContratados[val][0];
-            let valor = objServiciosNoContratados[val][1];
+            var valor = objServiciosNoContratados[val][1];
 
-            let newValorServicio = new Intl.NumberFormat("es-419").format(
-              valor
-            );
-            $("#cups").text(val);
-            $("#servicio").text(servicio);
-            $("#valor").text(`$ ${newValorServicio}`);
-            $('#selectCant').val(1)
-            $("#cantidad").val(1);
+            if ($("#cups").text() === "") {
+              var newValorServicio1 = new Intl.NumberFormat("es-419").format(
+                valor
+              );
+              $("#cups").text(val);
+              $("#servicio").text(servicio);
+              $("#valor").text(`$ ${newValorServicio1}`);
+              $("#cantidad").val(1);
 
-            $("#valorTotal").text(`$ ${newValorServicio}`);
+              //$("#valorTotal").text(`$ ${newValorServicio1}`);
+            }
+            if ($(".inputCampos2").attr("id") !== "inputCampos2") {
+              var newValorServicio2 = new Intl.NumberFormat("es-419").format(
+                valor
+              );
+              if ($("#cups2").text() === "") {
+                $("#cups2").text(val);
+                $("#servicio2").text(servicio);
+                $("#valor2").text(`$ ${newValorServicio2}`);
+                $("#cantidad2").val(1);
 
+                //$("#valorTotal").text(`$ ${newValorServicio3}`);
+              }
+            }
+            if ($(".inputCampos3").attr("id") !== "inputCampos3") {
+              var newValorServicio3 = new Intl.NumberFormat("es-419").format(
+                valor
+              );
+              if ($("#cups3").text() === "") {
+                $("#cups3").text(val);
+                $("#servicio3").text(servicio);
+                $("#valor3").text(`$ ${newValorServicio3}`);
+                $("#cantidad3").val(1);
+
+                //$("#valorTotal").text(`$ ${newValorServicio3}`);
+              }
+            }
+            if ($(".inputCampos4").attr("id") !== "inputCampos4") {
+              var newValorServicio4 = new Intl.NumberFormat("es-419").format(
+                valor
+              );
+              if ($("#cups4").text() === "") {
+                $("#cups4").text(val);
+                $("#servicio4").text(servicio);
+                $("#valor4").text(`$ ${newValorServicio4}`);
+                $("#cantidad4").val(1);
+
+                //$("#valorTotal").text(`$ ${newValorServicio4}`);
+              }
+            }
 
             //$("#selectServis").val('')
           }
@@ -102,7 +141,64 @@ $(document).ready(() => {
             );
             $("#valor").text(`$ ${newValorServicio}`);
 
-            $("#valorTotal").text(`$ ${newValorServicio}`);
+            //$("#valorTotal").text(`$ ${newValorServicio}`);
+          }
+        }
+      }
+    });
+
+    let iniCant2 = $("#cantidad2").val();
+    $("#cantidad2").change(function () {
+      if ($("#cantidad2").val() !== iniCant2) {
+        for (let val in objServiciosNoContratados) {
+          //console.log(val);
+
+          if ($("#cups2").text() == val) {
+            let valor = objServiciosNoContratados[val][1];
+            let newValorServicio = new Intl.NumberFormat("es-419").format(
+              valor * $("#cantidad2").val()
+            );
+            $("#valor2").text(`$ ${newValorServicio}`);
+
+            //$("#valorTotal").text(`$ ${newValorServicio}`);
+          }
+        }
+      }
+    });
+
+    let iniCant3 = $("#cantidad3").val();
+    $("#cantidad3").change(function () {
+      if ($("#cantidad3").val() !== iniCant3) {
+        for (let val in objServiciosNoContratados) {
+          //console.log(val);
+
+          if ($("#cups3").text() == val) {
+            let valor = objServiciosNoContratados[val][1];
+            let newValorServicio = new Intl.NumberFormat("es-419").format(
+              valor * $("#cantidad3").val()
+            );
+            $("#valor3").text(`$ ${newValorServicio}`);
+
+            //$("#valorTotal").text(`$ ${newValorServicio}`);
+          }
+        }
+      }
+    });
+
+    let iniCant4 = $("#cantidad4").val();
+    $("#cantidad4").change(function () {
+      if ($("#cantidad4").val() !== iniCant4) {
+        for (let val in objServiciosNoContratados) {
+          //console.log(val);
+
+          if ($("#cups4").text() == val) {
+            let valor = objServiciosNoContratados[val][1];
+            let newValorServicio = new Intl.NumberFormat("es-419").format(
+              valor * $("#cantidad4").val()
+            );
+            $("#valor4").text(`$ ${newValorServicio}`);
+
+            //$("#valorTotal").text(`$ ${newValorServicio}`);
           }
         }
       }
@@ -118,4 +214,43 @@ $(document).ready(() => {
     }
   };
   getValuesServis();
+
+  $("#addServis").click(() => {
+    console.log("add");
+    $("#selectServis").val("Seleccionar Servicio");
+    if ($("#cups").text() !== "") {
+      $(".inputCampos2").attr("id", "");
+      $(".deleteServis2").click(() => {
+        $("#cups2").text("");
+        $("#servicio2").text("");
+        $("#valor2").text("");
+        $("#cantidad2").val("");
+        $(".inputCampos2").attr("id", "inputCampos2");
+      });
+    }
+    if ($("#cups2").text() !== "") {
+      $(".inputCampos3").attr("id", "");
+      $(".deleteServis2").attr("id", "");
+      $(".deleteServis3").click(() => {
+        $(".deleteServis2").attr("id", "deleteServis2");
+        $("#cups3").text("");
+        $("#servicio3").text("");
+        $("#valor3").text("");
+        $("#cantidad3").val("");
+        $(".inputCampos3").attr("id", "inputCampos3");
+      });
+    }
+    if ($("#cups3").text() !== "") {
+      $(".inputCampos4").attr("id", "");
+      $(".deleteServis3").attr("id", "");
+      $(".deleteServis4").click(() => {
+        $(".deleteServis3").attr("id", "deleteServis3");
+        $("#cups4").text("");
+        $("#servicio4").text("");
+        $("#valor4").text("");
+        $("#cantidad4").val("");
+        $(".inputCampos4").attr("id", "inputCampos4");
+      });
+    }
+  });
 });
