@@ -8,10 +8,10 @@
     color-adjust: exact;
   }
   .padre .all-content {
-    height: 90vh;
+    height: 93vh;
   }
   .padre .all-content .left__formatoNoContratados {
-    height: 83vh;
+    height: 86vh;
   }
   .padre .all-content .left__formatoNoContratados::before {
     opacity: 1;
@@ -45,27 +45,26 @@
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 {
     text-align: start;
-    height: 250px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte2 .content__parte2__coosalud {
     display: flex;
     flex-direction: column;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente {
-    font-size: 13px;
+    font-size: 11px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs input {
     border: none;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__data {
-    font-size: 12px;
+    font-size: 11px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData {
     text-align: start;
     width: 50%;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData input {
-    font-size: 12px;
+    font-size: 11px;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte3 .content__parte3__tableInfoPaciente .tableInfoPaciente__infoInputs .infoInputs__insertData .insertData__ident {
     display: flex;
@@ -80,8 +79,9 @@
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte5 {
     display: block;
     width: 90%;
-    font-weight: 700;
-    margin-top: 20px;
+  }
+  .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte5 .content__parte5_notaMedioDeContraste {
+    display: none;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 {
     width: 90%;
@@ -89,7 +89,6 @@
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc {
     display: flex;
     flex-direction: column;
-    height: 250px;
     justify-content: space-around;
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__firmas {
@@ -102,6 +101,7 @@
   }
   .padre .all-content .left__formatoNoContratados .left__formatoNoContratados__content .content__parte6 .content__parte6__desc .parte6__infoFooter {
     display: flex;
+    font-size: 11px;
     flex-direction: column;
     color: #212f3d;
   }

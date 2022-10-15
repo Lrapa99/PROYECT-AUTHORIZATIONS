@@ -62,6 +62,7 @@ $(document).ready(() => {
         //alert("El campo ha cambiado");
         //console.log($("#cups").val());
         //clearInputs();
+
         for (let val in objServiciosNoContratados) {
           //console.log(val);
 
@@ -126,7 +127,32 @@ $(document).ready(() => {
       } else {
         clearInputs();
       }
+
+      hiddenNotaContrate();
     });
+
+    function hiddenNotaContrate() {
+      let cadena1 = $("#servicio").text(),
+        cadena2 = $("#servicio2").text(),
+        cadena3 = $("#servicio3").text(),
+        cadena4 = $("#servicio4").text();
+
+      //console.log(cadena1, cadena2, cadena3, cadena4);
+      let espression = /CONTRASTE/;
+
+      let index1 = cadena1.search(espression),
+        index2 = cadena2.search(espression),
+        index3 = cadena3.search(espression),
+        index4 = cadena4.search(espression);
+
+      if (index1 >= 0 || index2 >= 0 || index3 >= 0 || index4 >= 0) {
+        //console.log("contraste encontrado");
+        $(".content__parte5_notaMedioDeContraste").css("display", "block");
+      } else {
+        //console.log("contraste no encontrado");
+        $(".content__parte5_notaMedioDeContraste").css("display", "none");
+      }
+    }
 
     let iniCant = $("#cantidad").val();
     $("#cantidad").change(function () {
@@ -216,6 +242,28 @@ $(document).ready(() => {
   getValuesServis();
 
   $("#addServis").click(() => {
+    function hiddenNotaContrate() {
+      let cadena1 = $("#servicio").text(),
+        cadena2 = $("#servicio2").text(),
+        cadena3 = $("#servicio3").text(),
+        cadena4 = $("#servicio4").text();
+
+      //console.log(cadena1, cadena2, cadena3, cadena4);
+      let espression = /CONTRASTE/;
+
+      let index1 = cadena1.search(espression),
+        index2 = cadena2.search(espression),
+        index3 = cadena3.search(espression),
+        index4 = cadena4.search(espression);
+
+      if (index1 >= 0 || index2 >= 0 || index3 >= 0 || index4 >= 0) {
+       // console.log("contraste encontrado");
+        $(".content__parte5_notaMedioDeContraste").css("display", "block");
+      } else {
+        //console.log("contraste no encontrado");
+        $(".content__parte5_notaMedioDeContraste").css("display", "none");
+      }
+    }
     console.log("add");
     $("#selectServis").val("Seleccionar Servicio");
     if ($("#cups").text() !== "") {
@@ -226,6 +274,7 @@ $(document).ready(() => {
         $("#valor2").text("");
         $("#cantidad2").val("");
         $(".inputCampos2").attr("id", "inputCampos2");
+        hiddenNotaContrate();
       });
     }
     if ($("#cups2").text() !== "") {
@@ -238,6 +287,7 @@ $(document).ready(() => {
         $("#valor3").text("");
         $("#cantidad3").val("");
         $(".inputCampos3").attr("id", "inputCampos3");
+        hiddenNotaContrate();
       });
     }
     if ($("#cups3").text() !== "") {
@@ -250,6 +300,7 @@ $(document).ready(() => {
         $("#valor4").text("");
         $("#cantidad4").val("");
         $(".inputCampos4").attr("id", "inputCampos4");
+        hiddenNotaContrate();
       });
     }
   });
